@@ -22,7 +22,7 @@ else:
 
 # Diseño del formulario de inicio de sesión
 st.markdown("""
-<div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);">
+<div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 1024px 768x rgba(0, 0, 0, 0.1);">
     <div style="text-align: center; margin-bottom: 2rem;">
         <h1 style="color: #ad1c2d;">Bienvenido a UPCH</h1>
         <p style="color: #1c1b1c;">Inicia sesión para acceder a la aplicación</p>
@@ -33,7 +33,7 @@ st.markdown("""
             <input type="text" class="form-control" id="USUARIO" placeholder="Ingrese su usuario" required>
         </div>
         <div class="form-group">
-            <label for="contrasenia" style="color: #262424;">Contraseña</label>
+            <label for="contrasenia" style="color: #262424;">CONTRASEÑA</label>
             <input type="password" class="form-control" id="contrasenia" placeholder="Ingrese su contraseña" required>
         </div>
         <div class="form-group" style="text-align: center;">
