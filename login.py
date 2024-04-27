@@ -32,7 +32,7 @@ st.markdown("""
     <form>
         <div class="form-group">
             <label for="usuario" style="color: #262424;">USUARIO</label>
-            <input type="text" class="form-control" id="USUARIO" placeholder="Ingrese su usuario" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" required>
+            <input type="text" class="form-control" id="USUARIO" placeholder="Ingrese su usuario" style="width: 100%; padding: 0.7rem; margin-bottom: 1rem;" required>
         </div>
         <div class="form-group">
             <label for="contrasenia" style="color: #262424;">CONTRASEÑA</label>
