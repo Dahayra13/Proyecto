@@ -7,6 +7,7 @@ contrasenia_correcta = "cayetano"
 
 # Cargar logo de la universidad
 logo_path = "Logo_upch.png"
+
 if os.path.exists(logo_path):
     logo = st.image(logo_path, width=250, use_column_width=False)
 else:
