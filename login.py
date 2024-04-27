@@ -49,6 +49,3 @@ def handleLogin():
         st.success("¡Inicio de sesión exitoso!")
     else:
         st.error("Usuario o contraseña incorrectos.")
-```
-
-Con estas modificaciones, los logos se encuentran dentro del formulario de inicio de sesión, y los elementos visuales están mejor alineados y organizados para una presentación más ordenada.
