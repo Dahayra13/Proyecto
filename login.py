@@ -28,12 +28,20 @@ st.markdown("""
         <p style="color: #0d0c0c;">Aᴄᴄᴇsᴏ ᴀᴜᴛᴏʀɪᴢᴀᴅᴏ ᴀʟ ᴄᴜʀʀɪ́ᴄᴜʟᴏ ᴀᴄᴀᴅᴇ́ᴍɪᴄᴏ</p>
     </div>
     <form>
-
-# Ejecutar la aplicación
-if __name__ == '__main__':
-    # Obtener las credenciales del usuario
-    username = st.text_input("Usuario", "", placeholder="Ingrese su usuario")
-    password = st.text_input("Contraseña", "", type="password", placeholder="Ingrese su contraseña")
+      <div class="form-group">
+            <label for="usuario" style="color: #030303;">𝚄𝚂𝚄𝙰𝚁𝙸𝙾:</label>
+            <input type="text" class="form-control" id="" placeholder="Ingrese su usuario" style="width: 100%; padding: 0.7rem; margin-bottom: 1rem;" required>
+        </div>
+        <div class="form-group">
+            <label for="contrasenia" style="color: #030303;">𝙲𝙾𝙽𝚃𝚁𝙰𝚂𝙴𝙽̃𝙰:</label>
+            <input type="password" class="form-control" id="𝙲𝙾𝙽𝚃𝚁𝙰𝚂𝙴𝙽̃A" placeholder="Ingrese su contraseña" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" required>
+        </div>
+        <div class="form-group" style="text-align: center;">
+            <button type="button" class="btn btn-primary" onclick="handleLogin()" style="padding: 0.5rem 2rem; background-color: #9c2121; color: grey; border: none; border-radius: 0.3rem;">𝐈𝐧𝐢𝐜𝐢𝐚𝐫 𝐬𝐞𝐬𝐢𝐨́𝐧</button>
+        </div>
+    </form>
+</div>
+""", unsafe_allow_html=True)
 
     # Autenticar al usuario
     if st.button("Iniciar sesión"):
