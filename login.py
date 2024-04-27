@@ -7,18 +7,17 @@ contrasenia_correcta = "cayetano"
 
 # Cargar logo de la universidad
 logo_path = "Logo_upch.png"
-
 if os.path.exists(logo_path):
     logo = st.image(logo_path, width=250, use_column_width=False)
 else:
     st.error("No se encontró el archivo de logo de la universidad.")
-    
+
 # Ruta de la imagen de fondo
 fondo_path = "universidad.jpg"
 
 # Diseño del formulario de inicio de sesión
 st.markdown("""
-<div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 0 50px rgba(0, 0, 0, 0.1); width: 1024px; height: 768px;">
+<div style="background-image: url('{fondo_path}'); background-size: cover; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 0 50px rgba(0, 0, 0, 0.1); width: 500px; height: 768px;">
     <div style="text-align: center; margin-bottom: 2rem;">
         <h1 style="color: #ad1c2d;">Bienvenido a UPCH</h1>
         <p style="color: #1c1b1c;">Inicia sesión para acceder a la aplicación</p>
@@ -37,7 +36,7 @@ st.markdown("""
         </div>
     </form>
 </div>
-""", unsafe_allow_html=True)
+""".format(fondo_path=fondo_path), unsafe_allow_html=True)
 
 # Función para manejar el inicio de sesión
 def handleLogin():
@@ -48,4 +47,3 @@ def handleLogin():
         st.success("¡Inicio de sesión exitoso!")
     else:
         st.error("Usuario o contraseña incorrectos.")
-
