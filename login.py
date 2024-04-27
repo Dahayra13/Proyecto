@@ -43,14 +43,15 @@ st.markdown("""
     </form>
 </div>
 """, unsafe_allow_html=True)
-# Función para autenticar al usuario
-def authenticate(username_entered, password_entered):
-    if username_entered == usuario_correcto and password_entered == contrasenia_correcta:
-        return True
-    else:
-        return False
+
 # Ejecutar la aplicación
 if __name__ == '__main__':
-    login()
+    username_entered = st.text_input("Usuario", "")
+    password_entered = st.text_input("Contraseña", "", type="password")
+    if st.button("Iniciar sesión"):
+        if authenticate(username_entered, password_entered):
+            st.success("¡Inicio de sesión exitoso!")
+        else:
+            st.write("Credenciales incorrectas. Por favor, inténtalo de nuevo.")
 
    
