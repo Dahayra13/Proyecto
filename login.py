@@ -101,6 +101,11 @@ if submit:
 
         # Nota al pie
         st.write("Nota: Los cursos en color tienen prerrequisitos que deben ser aprobados antes de llevarlos.")
+
+        # Mostrar la imagen del grafo de los cursos
+        st.subheader("Grafo de los Cursos de Ingeniería Informática")
+        st.write("En esta imagen se muestra un grafo que representa la estructura de los cursos de la carrera de Ingeniería Informática. Los nodos representan los cursos, y las conexiones entre ellos indican los prerrequisitos necesarios para llevar cada curso.")
+        st.image("HITO 1 - GRUPO REZAGADOS.jpg", caption="Grafo de los Cursos de Ingeniería Informática")
     else:
         st.error("Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.")
 
