@@ -29,11 +29,11 @@ st.markdown("""
     </div>
     <form>
         <div class="form-group">
-            <label for="usuario" style="color: #030303;">𝚄𝚂𝚄𝙰𝚁𝙸𝙾</label>
+            <label for="usuario" style="color: #030303;">𝚄𝚂𝚄𝙰𝚁𝙸𝙾:</label>
             <input type="text" class="form-control" id="" placeholder="Ingrese su usuario" style="width: 100%; padding: 0.7rem; margin-bottom: 1rem;" required>
         </div>
         <div class="form-group">
-            <label for="contrasenia" style="color: #030303;">𝙲𝙾𝙽𝚃𝚁𝙰𝚂𝙴𝙽̃𝙰</label>
+            <label for="contrasenia" style="color: #030303;">𝙲𝙾𝙽𝚃𝚁𝙰𝚂𝙴𝙽̃𝙰:</label>
             <input type="password" class="form-control" id="𝙲𝙾𝙽𝚃𝚁𝙰𝚂𝙴𝙽̃A" placeholder="Ingrese su contraseña" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" required>
         </div>
         <div class="form-group" style="text-align: center;">
@@ -43,29 +43,55 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Función para manejar el inicio de sesión
-def handleLogin():
-    usuario = st.text_input("Usuario", key="usuario")
-    contrasenia = st.text_input("Contraseña", type="password", key="contrasenia")
+# Definir credenciales de inicio de sesión
+usuario_correcto = "41650931"
+contrasenia_correcta = "cayetano"
 
-    if usuario == usuario_correcto and contrasenia == contrasenia_correcta:
-        st.text_input("Usuario", value="usuario correcto", key="usuario")
-    elif usuario == usuario_correcto:
-        st.text_input("Usuario", value="usuario incorrecto", key="usuario")
-    else:
-        st.text_input("Usuario", value="usuario o contraseña incorrectos", key="usuario")
-        st.text_input("Contraseña", value="", type="password", key="contrasenia")
+# Cargar logo de la universidad
+logo_path =  "Logo_upch.png"
+if os.path.exists  (logo_path):
+    logo = st.image (logo_path, width = 300, use_column_width = False)
+else:
+    st.error("No se encontró el archivo de logo de la universidad.")
 
-# Función para alternar la visibilidad de la contraseña
-def togglePasswordVisibility():
-    password_field = st.session_state.get("contrasenia")
-    if password_field.type == "password":
-        password_field.type = "text"
+# Función para autenticar al usuario
+def authenticate(username_entered, password_entered):
+    if username_entered == usuario_correcto and password_entered == contrasenia_correcta:
+        return True
     else:
-        password_field.type = "password"
+        return False
+
+# Página de inicio de sesión
+def login():
+    st.markdown("""
+        <style>
+        body {
+            background-color: #F8F8FF; /* Azul fantasma */
+            color: #333333; /* Gris oscuro */
+        }
+        </style>
+    """, unsafe_allow_html=True)
+    st.title("Inicio de Sesión - UPCH")
+    username_entered = st.text_input("Usuario", key="username")
+    password_entered = st.text_input("Contraseña", type="password", key="password")
+    if st.button("Ingresar"):
+        if authenticate(username_entered, password_entered):
+            st.success("¡Inicio de sesión exitoso!")
+            show_courses()
+        elif username_entered == usuario_correcto:
+            st.text_input("Usuario", value="usuario correcto", key="username")
+            st.text_input("Contraseña", value="", type="password", key="password")
+        else:
+            st.text_input("Usuario", value="usuario o contraseña incorrectos", key="username")
+            st.text_input("Contraseña", value="", type="password", key="password")
+
+def show_courses():
+    # Aquí irían las instrucciones para mostrar los cursos
+    pass
 
 # Ejecutar la aplicación
 if __name__ == '__main__':
-    handleLogin()
-        
+    login()
+
+
    
