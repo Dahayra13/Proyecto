@@ -100,6 +100,31 @@ else:
 
     # Mostrar los cursos por ciclo
     for ciclo in data["CICLO"].unique():
+        cursos = data[data["CICLO"] == ciclo]
+        st.subheader(f"{ciclo}")
+        st.write(cursos.style.apply(lambda x: [f"background-color: {get_bg_color(ciclo)}"] * len(x), axis=1).to_html(), unsafe_allow_html=True)
+
+    # Sección de gráfico de prerrequisitos
+    st.subheader("Visualización de Prerrequisitos")
+    st.write("A continuación, se muestra un gráfico que ilustra las relaciones de prerrequisitos entre los cursos.")
+
+    # Generar el gráfico de prerrequisitos
+    G = nx.DiGraph()
+    for _, row in data.iterrows():
+        curso = row["CURSO"]
+        prerequisitos = row["PREREQUISITOS"].split(", ")
+        G.add_node(curso)
+        for p in prerequisitos:
+            G.add_edge(p, curso)
+
+    # Mostrar el gráfico de prerrequisitos
+    fig, ax = plt.subplots(figsize=(12, 8))
+    pos = nx.spring_layout(G)
+    nx.draw(G, pos, with_labels=True, node_color="#1A4D80", edge_color="#1A4D80", font_color="white", ax=ax)
+    st.pyplot(fig)
+
+    # Nota al pie
+    st.write("Nota: Los cursos en colores
 
 
 
