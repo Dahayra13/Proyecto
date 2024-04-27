@@ -24,7 +24,7 @@ st.markdown(
     }
     .portal-title {
         text-align: center;
-        color: #1A4D80;
+        color: #fcfcfc;
         margin-bottom: 10px;
         font-size: 25px;
     }
@@ -35,7 +35,7 @@ st.markdown(
 )
 
 st.image(university_logo, use_column_width=True)
-st.markdown("<div class='login-container'><h3 class='portal-title'>𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐩𝐥𝐚𝐧 𝐝𝐞 𝐄𝐬𝐭𝐮𝐝𝐢𝐨𝐬</h3>", unsafe_allow_html=True)
+st.markdown("<div class='login-container'><h3 class='portal-title'>ℙ𝕆ℝ𝕋𝔸𝕃 𝔻𝔼 𝕄𝔸𝕋ℝ𝕀ℂ𝕌𝕃𝔸 ~ 𝕌ℙℂℍ</h3>", unsafe_allow_html=True)
 
 # Crear los campos de usuario y contraseña
 with st.form(key="login_form"):
