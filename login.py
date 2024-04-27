@@ -20,16 +20,6 @@ if os.path.exists(logo_path):
 else:
     st.error("No se encontró el archivo de logo de la universidad.")
 
- #Configurar el diseño de la página
-try:
-    st.set_page_config(
-        page_title="Inicio de Sesión - UPCH",
-        page_icon=":lock:",
-        layout="centered"
-    )
-except ValueError as e:
-    st.error(f"Error al configurar la página: {e}")
-
 # Diseño del formulario de inicio de sesión
 st.markdown("""
 <div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
@@ -55,14 +45,10 @@ st.markdown("""
 
 # Función para manejar el inicio de sesión
 def handleLogin():
-    usuario = st.session_state.get("usuario", "")
-    contrasenia = st.session_state.get("contrasenia", "")
+    usuario = st.text_input("Usuario", key="usuario")
+    contrasenia = st.text_input("Contraseña", type="password", key="contrasenia")
 
     if usuario == usuario_correcto and contrasenia == contrasenia_correcta:
         st.success("¡Inicio de sesión exitoso!")
     else:
         st.error("Usuario o contraseña incorrectos.")
-
-# Actualizar el estado de las variables de entrada
-st.session_state["usuario"] = st.text_input("Usuario", key="usuario")
-st.session_state["contrasenia"] = st.text_input("Contraseña", type="password", key="contrasenia")
