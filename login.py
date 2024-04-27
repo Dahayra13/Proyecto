@@ -22,13 +22,13 @@ st.markdown(
         align-items: center;
         height: 100vh;
     }
-    .login-container {
-        background-color: #fcfcfc;
-        width: 300px;
-        padding: 30px;
-        border-radius: 20px;
-        align-items: center;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    .portal-title {
+        text-align: center;
+        color: #1A4D80;
+        margin-bottom: 10px;
+        font-size: 25px;
+    }
+
     </style>
     """,
     unsafe_allow_html=True
