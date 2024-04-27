@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 
 # Configurar el diseño de la página
-st.set_page_config(page_title="𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐩𝐥𝐚𝐧 𝐝𝐞 𝐄𝐬𝐭𝐮𝐝𝐢𝐨𝐬", page_icon=":mortar_board:")
+<h1 style="color: #ad1c2d;">𝐁𝐢𝐞𝐧𝐯𝐞𝐧𝐢𝐝𝐨 𝐚𝐥 𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐌𝐚𝐭𝐫𝐢𝐜𝐮𝐥𝐚</h1>
 
 # Cargar la imagen de la insignia de la universidad
 university_logo = Image.open("Logo_upch.png")
