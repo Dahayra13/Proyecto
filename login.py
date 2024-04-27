@@ -18,18 +18,18 @@ st.markdown(
     .stApp {
         background-color: #1A4D80;
     }
-    .stMain {
+    .login-container {
         background-color: white;
-        width: 800px;
-        height: 600px;
-        margin: 0 auto;
-        padding: 20px;
+        width: 400px;
+        padding: 30px;
+        border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 50px auto;
     }
     .portal-title {
         text-align: center;
         color: #1A4D80;
-        margin-top: 50px;
+        margin-bottom: 20px;
     }
     </style>
     """,
@@ -37,7 +37,10 @@ st.markdown(
 )
 
 st.image(university_logo, use_column_width=True)
-st.markdown("<h3 class='portal-title'>Portal de Plan de Estudios</h3>", unsafe_allow_html=True)
+st.markdown(
+    "<div class='login-container'><h3 class='portal-title'>Portal de Plan de Estudios</h3>",
+    unsafe_allow_html=True
+)
 
 # Crear los campos de usuario y contraseña
 with st.form(key="login_form"):
@@ -45,12 +48,16 @@ with st.form(key="login_form"):
     password = st.text_input("Password:", type="password", value=Password)
     submit = st.form_submit_button("Log In")
 
+# Cerrar el div del login-container
+st.markdown("</div>", unsafe_allow_html=True)
+
 # Verificar las credenciales y mostrar un mensaje de éxito o error
 if submit:
     if username == User and password == Password:
         st.success("¡correct user!")
     else:
         st.error("Invalid username or password. Please try again.")
+
 
 
 
