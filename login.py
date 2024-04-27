@@ -77,7 +77,7 @@ st.markdown(
 )
 
 st.image(university_logo, use_column_width=True)
-st.markdown("<div class='login-container'><h1 class='portal-title'>𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐩𝐥𝐚𝐧 𝐝𝐞 𝐄𝐬𝐭𝐮𝐝𝐢𝐨𝐬</h1>", unsafe_allow_html=True)
+st.markdown("<div class='login-container'><h1 class='portal-title'>🎓 𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐌𝐚𝐭𝐫í𝐜𝐮𝐥𝐚 - UPCH</h1>", unsafe_allow_html=True)
 
 # Crear los campos de usuario y contraseña
 with st.form(key="login_form"):
@@ -99,6 +99,7 @@ if submit:
         st.balloons()
     else:
         st.error("Invalid username or password. Please try again.")
+
 
 
 
