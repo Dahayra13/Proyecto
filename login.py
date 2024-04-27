@@ -36,7 +36,7 @@ st.markdown(
     f"""
     <style>
     .stApp {{
-        background-image: url("data:image/jpeg;base64,{background_image.tobytes('universidad.jpg')}");
+        background-image: url("data:image/jpeg;base64,{background_image.tobytes('jpeg')}");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -45,6 +45,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 
