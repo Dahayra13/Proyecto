@@ -22,35 +22,29 @@ st.markdown(hide_table_row_index, unsafe_allow_html=True)
 
 # Función para obtener el color de fondo según el ciclo
 def get_bg_color(ciclo):
-    if ciclo.startswith("PRIMER"):
-        return "#F0F8FF"  # Azul claro
-    elif ciclo.startswith("SEGUNDO"):
-        return "#E0FFFF"  # Turquesa claro
-    elif ciclo.startswith("TERCER"):
-        return "#FAFAD2"  # Amarillo claro
-    elif ciclo.startswith("CUARTO"):
-        return "#FAF0E6"  # Lino
-    elif ciclo.startswith("QUINTO"):
-        return "#FFF5EE"  # Seashell
-    elif ciclo.startswith("SEXTO"):
-        return "#F5F5DC"  # Beige
-    elif ciclo.startswith("SEPTIMO"):
-        return "#E6E6FA"  # Lavanda
-    elif ciclo.startswith("OCTAVO"):
-        return "#FFF0F5"  # Lavanda rojizo
-    elif ciclo.startswith("NOVENO"):
-        return "#F8F8FF"  # Azul fantasma
-    elif ciclo.startswith("DECIMO"):
-        return "#F5DEB3"  # Wheat
-    else:
-        return ""  # Sin color de fondo
+    colores = {
+        "PRIMER": "#F0F8FF",   # Azul claro
+        "SEGUNDO": "#E0FFFF",  # Turquesa claro
+        "TERCER": "#FAFAD2",   # Amarillo claro
+        "CUARTO": "#FAF0E6",   # Lino
+        "QUINTO": "#FFF5EE",   # Seashell
+        "SEXTO": "#F5F5DC",    # Beige
+        "SEPTIMO": "#E6E6FA",  # Lavanda
+        "OCTAVO": "#FFF0F5",   # Lavanda rojizo
+        "NOVENO": "#F8F8FF",   # Azul fantasma
+        "DECIMO": "#F5DEB3"    # Wheat
+    }
+    return colores.get(ciclo, "")  # Obtener el color correspondiente al ciclo o vacío si no hay coincidencia
 
-# Mostrar los cursos por ciclo
+# Mostrar bienvenida al estudiante con globitos
+st.balloons()
+st.write("¡Bienvenido, Estudiante!")
+
+# Mostrar los cursos por ciclo con colores personalizados
 for ciclo in data["CICLO"].unique():
     cursos = data[data["CICLO"] == ciclo]
     st.subheader(f"{ciclo}")
-    st.write(cursos.style.apply(lambda x: [f"background-color: {get_bg_color(ciclo)}"] * len(x), axis=1).to_html(), unsafe_allow_html=True)
+    st.write(cursos.style.apply(lambda x: [f"background-color: {get_bg_color(ciclo)}"] * len(x), axis=1).to_html(escape=False), unsafe_allow_html=True)
 
 # Nota al pie
 st.write("Nota: Los cursos en color tienen prerrequisitos que deben ser aprobados antes de llevarlos.")
-
