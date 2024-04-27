@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1sz2x9ImUCHfZMYMgolIOZCn-G93ZBBJb
 """
 import streamlit as st
-import pandas as pd
 import os
 
 # Definir credenciales de inicio de sesión
@@ -17,28 +16,47 @@ contrasenia_correcta = "cayetano"
 # Cargar logo de la universidad
 logo_path = "cayetano.jpg"
 if os.path.exists(logo_path):
-    logo = st.image(logo_path, width=200)
+    logo = st.image(logo_path, width=150, use_column_width=False)
 else:
     st.error("No se encontró el archivo de logo de la universidad.")
 
-# Formulario de inicio de sesión
+# Configurar el diseño de la página
 st.set_page_config(page_title="Inicio de Sesión - UPCH", page_icon=":lock:")
+
+# Diseño del formulario de inicio de sesión
 st.markdown("""
-<div style="background-color: #007bff; color: white; padding: 2rem; border-radius: 0.5rem;">
-    <h1>Iniciar Sesión</h1>
-    <p>Por favor, ingresa tus credenciales para acceder a la aplicación.</p>
+<div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <h1 style="color: #007bff;">Bienvenido a UPCH</h1>
+        <p style="color: #6c757d;">Inicia sesión para acceder a la aplicación</p>
+    </div>
+    <form action="javascript:void(0);">
+        <div class="form-group">
+            <label for="usuario" style="color: #495057;">Usuario</label>
+            <input type="text" class="form-control" id="usuario" placeholder="Ingresa tu usuario" required>
+        </div>
+        <div class="form-group">
+            <label for="contrasenia" style="color: #495057;">Contraseña</label>
+            <input type="password" class="form-control" id="contrasenia" placeholder="Ingresa tu contraseña" required>
+        </div>
+        <div class="form-group" style="text-align: center;">
+            <button type="submit" class="btn btn-primary" onclick="handleLogin()">Iniciar Sesión</button>
+        </div>
+    </form>
 </div>
 """, unsafe_allow_html=True)
 
-# Crear el formulario de inicio de sesión
-with st.form(key="login_form"):
-    usuario = st.text_input("Usuario")
-    contrasenia = st.text_input("Contraseña", type="password")
-    submit_button = st.form_submit_button("Iniciar Sesión")
+# Función para manejar el inicio de sesión
+def handleLogin():
+    usuario = st.session_state.get("usuario", "")
+    contrasenia = st.session_state.get("contrasenia", "")
 
-if submit_button:
     if usuario == usuario_correcto and contrasenia == contrasenia_correcta:
         st.success("¡Inicio de sesión exitoso!")
     else:
         st.error("Usuario o contraseña incorrectos.")
+
+# Actualizar el estado de las variables de entrada
+st.session_state["usuario"] = st.text_input("Usuario", key="usuario")
+st.session_state["contrasenia"] = st.text_input("Contraseña", type="password", key="contrasenia")
 
