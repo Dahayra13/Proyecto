@@ -13,15 +13,6 @@ import os
 usuario_correcto = "41650931"
 contrasenia_correcta = "cayetano"
 
-# Función para autenticar al usuario
-def authenticate(username_entered, password_entered):
-    if username_entered == usuario_correcto and password_entered == contrasenia_correcta:
-        return True
-    else:
-        return False
-# Ejecutar la aplicación
-if __name__ == '__main__':
-    login()
 
 # Cargar logo de la universidad
 logo_path =  "Logo_upch.png"
@@ -52,39 +43,14 @@ st.markdown("""
     </form>
 </div>
 """, unsafe_allow_html=True)
-
-
-
-
-
-# Página de inicio de sesión
-def login():
-    st.markdown("""
-        <style>
-        body {
-            background-color: #F8F8FF; /* Azul fantasma */
-            color: #333333; /* Gris oscuro */
-        }
-        </style>
-    """, unsafe_allow_html=True)
-    st.title("Inicio de Sesión - UPCH")
-    username_entered = st.text_input("Usuario", key="username")
-    password_entered = st.text_input("Contraseña", type="password", key="password")
-    if st.button("Ingresar"):
-        if authenticate(username_entered, password_entered):
-            st.success("¡Inicio de sesión exitoso!")
-            show_courses()
-        elif username_entered == usuario_correcto:
-            st.text_input("Usuario", value="usuario correcto", key="username")
-            st.text_input("Contraseña", value="", type="password", key="password")
-        else:
-            st.text_input("Usuario", value="usuario o contraseña incorrectos", key="username")
-            st.text_input("Contraseña", value="", type="password", key="password")
-
-def show_courses():
-    # Aquí irían las instrucciones para mostrar los cursos
-    pass
-
-
+# Función para autenticar al usuario
+def authenticate(username_entered, password_entered):
+    if username_entered == usuario_correcto and password_entered == contrasenia_correcta:
+        return True
+    else:
+        return False
+# Ejecutar la aplicación
+if __name__ == '__main__':
+    login()
 
    
