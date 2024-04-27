@@ -17,8 +17,7 @@ Password = "cayetano"
 # Crear el diseño del formulario de inicio de sesión
 st.markdown("<h1 style='text-align: center; color: #1A4D80;'>Universidad Cayetano</h1>", unsafe_allow_html=True)
 st.image(university_logo, use_column_width=True)
-st.markdown("<h2 style='text-align: center; color: #1A4D80;'>Portal de Matrícula</h2>", unsafe_allow_html=True)
-st.markdown("<h3 style='text-align: center; color: #1A4D80;'>Portal de Plan de Estudios</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: #f8f9fa;'>Portal de Plan de Estudios</h3>", unsafe_allow_html=True)
 
 # Crear los campos de usuario y contraseña
 with st.form(key="login_form"):
