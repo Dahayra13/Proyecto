@@ -4,9 +4,8 @@ from PIL import Image
 # Configurar el diseño de la página
 st.set_page_config(layout="centered")
 
-# Cargar la imagen de la insignia de la universidad y el candado
+# Cargar la imagen de la insignia de la universidad
 university_logo = Image.open("Logo_upch.png")
-lock_image = Image.open("universidad.jpg")
 
 # Credenciales de inicio de sesión
 User = "41650931"
@@ -29,47 +28,7 @@ st.markdown(
         margin-bottom: 10px;
         font-size: 25px;
     }
-    .form-field {
-        position: relative;
-        margin-bottom: 20px;
-    }
-    .form-field label {
-        font-size: 16px;
-        font-weight: bold;
-        color: #fcfcfc;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-    }
-    .form-field input {
-        width: 100%;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        background-image: url('lock.png');
-        background-repeat: no-repeat;
-        background-position: 10px center;
-        background-size: 24px 24px;
-        padding-left: 40px;
-    }
-    .submit-button {
-        width: 100%;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        background-color: #1A4D80;
-        color: white;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-    .submit-button:hover {
-        background-color: #134266;
-    }
+
     </style>
     """,
     unsafe_allow_html=True
@@ -80,8 +39,8 @@ st.markdown("<div class='login-container'><h3 class='portal-title'> 𝐏𝐨𝐫
 
 # Crear los campos de usuario y contraseña
 with st.form(key="login_form"):
-    username = st.text_input(" 𝚄𝚜𝚎𝚛: ", value=User, label_visibility="collapsed")
-    password = st.text_input("𝙿𝚊𝚜𝚜𝚠𝚘𝚛𝚍:", type="password", value=Password, label_visibility="collapsed")
+    username = st.text_input(" 𝚄𝚜𝚎𝚛: ", value=User)
+    password = st.text_input("𝙿𝚊𝚜𝚜𝚠𝚘𝚛𝚍:", type="password", value=Password)
     submit = st.form_submit_button("𝕃𝕠𝕘 𝕀𝕟")
 
 # Cerrar el div del login-container
@@ -93,8 +52,6 @@ if submit:
         st.success("¡correct user!")
     else:
         st.error("Invalid username or password. Please try again.")
-
-
 
 
 
