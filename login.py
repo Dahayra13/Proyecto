@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 
 # Configurar el diseño de la página
-st.set_page_config(page_title="Portal de Plan de Estudios", page_icon=":mortar_board:")
+st.set_page_config(page_title="𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐩𝐥𝐚𝐧 𝐝𝐞 𝐄𝐬𝐭𝐮𝐝𝐢𝐨𝐬", page_icon=":mortar_board:")
 
 # Cargar la imagen de la insignia de la universidad
 university_logo = Image.open("Logo_upch.png")
@@ -16,10 +16,10 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #1A4D80;
+        background-color: #81b2e3;
     }
     .login-container {
-        background-color: white;
+        background-color: #9ee6cf;
         width: 300px;
         padding: 5px;
         border-radius: 10px;
