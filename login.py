@@ -16,7 +16,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #81b2e3;
+        background-color: #0d2b69;
     }
     .login-container {
         background-color: #9ee6cf;
