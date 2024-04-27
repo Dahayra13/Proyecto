@@ -16,7 +16,6 @@ def authenticate(username_entered, password_entered):
     else:
         return False
 
-
 # Cargar logo de la universidad
 logo_path =  "Logo_upch.png"
 if os.path.exists  (logo_path):
@@ -49,14 +48,6 @@ if __name__ == '__main__':
     </div>
     """, unsafe_allow_html=True)
 
-    if st.button("Iniciar sesión"):
-        if authenticate(username_entered, password_entered):
-            st.markdown('<div id="result-message" style="color: green; text-align: center; margin-top: 1rem;">Inicio de sesión exitoso.</div>', unsafe_allow_html=True)
-        else:
-            st.markdown('<div id="result-message" style="color: red; text-align: center; margin-top: 1rem;">Credenciales incorrectas. Por favor, inténtalo de nuevo.</div>', unsafe_allow_html=True)
-
-
-
-
+   
 
    
