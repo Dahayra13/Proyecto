@@ -15,7 +15,6 @@ User = "41650931"
 Password = "cayetano"
 
 # Crear el diseño del formulario de inicio de sesión
-st.markdown("<h1 style='text-align: center; color: #1A4D80;'>Universidad Cayetano</h1>", unsafe_allow_html=True)
 st.image(university_logo, use_column_width=True)
 st.markdown("<h3 style='text-align: center; color: #f8f9fa;'>Portal de Plan de Estudios</h3>", unsafe_allow_html=True)
 
@@ -37,7 +36,7 @@ st.markdown(
     f"""
     <style>
     .stApp {{
-        background-image: url("data:image/jpeg;base64,{background_image.tobytes('jpeg')}");
+        background-image: url("data:image/jpeg;base64,{background_image.tobytes('universidad.jpg')}");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
