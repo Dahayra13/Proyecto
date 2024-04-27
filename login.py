@@ -13,9 +13,9 @@ import os
 usuario_correcto = "41650931"
 contrasenia_correcta = "cayetano"
 
-# Cargar logo de la universidad
-logo_path = "Logo_upch.png"
-st.image(logo_path, width=250, use_column_width=False, style="display: block; margin: auto; margin-left: 20px;")
+# Cargar logo de la universidad centrado con margen izquierdo
+if os.path.exists(logo_path):
+    st.image(logo_path, width=250, use_column_width=False, style="display: block; margin: auto; margin-left: 20px;")
 else:
     st.error("No se encontró el archivo de logo de la universidad.")
 
