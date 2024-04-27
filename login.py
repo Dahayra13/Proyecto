@@ -6,9 +6,6 @@ import os
 usuario_correcto = "41650931"
 contrasenia_correcta = "cayetano"
 
-# Configurar el diseño de la página
-st.set_page_config(page_title="Gestión de Cursos UPCH", page_icon="🎓", layout="wide")
-
 # Cargar datos desde el archivo CSV
 data = pd.read_csv("database.csv")
 
