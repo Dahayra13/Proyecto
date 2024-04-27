@@ -6,9 +6,6 @@ import os
 usuario_correcto = "41650931"
 contrasenia_correcta = "cayetano"
 
-# Cargar datos desde el archivo CSV
-data = pd.read_csv("database.csv")
-
 # Función para autenticar al usuario
 def authenticate(username_entered, password_entered):
     if username_entered == usuario_correcto and password_entered == contrasenia_correcta:
@@ -50,6 +47,9 @@ if __name__ == '__main__':
     """, unsafe_allow_html=True)
 
 # Mostrar cursos
+# Cargar datos desde el archivo CSV
+data = pd.read_csv("database.csv")
+
 def show_courses():
     st.markdown("""
         <style>
