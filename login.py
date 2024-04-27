@@ -22,7 +22,7 @@ else:
 
 # Cargar imagen de usuario
 st.write("icono.png:")
-usuario_image = st.file_uploader("Selecciona una imagen", type=["png", "jpg", "jpeg"])
+usuario_image = st.file_uploader("icono.png", type=["png", "jpg", "jpeg"])
 
 # Diseño mejorado del formulario de inicio de sesión
 st.markdown("""
