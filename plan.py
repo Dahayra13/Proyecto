@@ -11,8 +11,15 @@ st.set_page_config(page_title="Gestión de Cursos UPCH", page_icon=":books:", la
 st.balloons()
 st.write("# ¡Bienvenido, Estudiante! 🎈🎉")
 
-# Encabezado y descripción
-st.write("Esta aplicación web permite visualizar los cursos de los 10 ciclos de la carrera de Ingeniería Informática en la Universidad Peruana Cayetano Heredia (UPCH), junto con sus prerrequisitos y detalles.")
+# Descripción de la aplicación
+st.write("""
+## Bienvenido a la Plataforma de Gestión de Cursos de Ingeniería Informática - UPCH
+
+En esta aplicación, podrás explorar los cursos de los 10 ciclos de la carrera de Ingeniería Informática en la Universidad Peruana Cayetano Heredia (UPCH). Descubre los cursos, sus prerrequisitos y detalles para planificar tu trayectoria académica de manera efectiva.
+
+¡Sumérgete en el mundo de la ingeniería informática y construye tu camino hacia el éxito académico!
+
+""")
 
 # Estilos CSS
 hide_table_row_index = """
@@ -47,3 +54,4 @@ for ciclo in data["CICLO"].unique():
 
 # Nota al pie
 st.write("Nota: Los cursos en color tienen prerrequisitos que deben ser aprobados antes de llevarlos.")
+
