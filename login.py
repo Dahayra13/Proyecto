@@ -49,12 +49,23 @@ def handleLogin():
     contrasenia = st.text_input("Contraseña", type="password", key="contrasenia")
 
     if usuario == usuario_correcto and contrasenia == contrasenia_correcta:
-        st.success("¡Inicio de sesión exitoso!")
+        st.text_input("Usuario", value="usuario correcto", key="usuario")
     elif usuario == usuario_correcto:
-        st.success("¡Usuario correcto!")
+        st.text_input("Usuario", value="usuario incorrecto", key="usuario")
     else:
-        st.error("Usuario o contraseña incorrectos.")
-        
-    if __name__ == '__main__':
-    handleLogin()
+        st.text_input("Usuario", value="usuario o contraseña incorrectos", key="usuario")
+        st.text_input("Contraseña", value="", type="password", key="contrasenia")
 
+# Función para alternar la visibilidad de la contraseña
+def togglePasswordVisibility():
+    password_field = st.session_state.get("contrasenia")
+    if password_field.type == "password":
+        password_field.type = "text"
+    else:
+        password_field.type = "password"
+
+# Ejecutar la aplicación
+if __name__ == '__main__':
+    handleLogin()
+        
+   
