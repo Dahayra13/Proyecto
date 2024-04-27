@@ -20,8 +20,6 @@ if os.path.exists(logo_path):
 else:
     st.error("No se encontró el archivo de logo de la universidad.")
 
-# Cargar imagen de usuario
-usuario_image = st.file_uploader("Cargar imagen de usuario", type=["png", "jpg", "jpeg"])
 
 # Diseño mejorado del formulario de inicio de sesión
 st.markdown("""
@@ -40,7 +38,7 @@ st.markdown("""
             <input type="password" class="form-control" id="contrasenia" placeholder="Ingrese su contraseña" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" required>
         </div>
         <div class="form-group" style="text-align: center;">
-            <button type="button" class="btn btn-primary" onclick="handleLogin()" style="padding: 0.5rem 2rem; background-color: #ad1c2d; color: white; border: none; border-radius: 0.3rem;">Iniciar Sesión</button>
+            <button type="button" class="btn btn-primary" onclick="handleLogin()" style="padding: 0.5rem 2rem; background-color: #ad1c2d; color: grey; border: none; border-radius: 0.3rem;">Iniciar Sesión</button>
         </div>
     </form>
 </div>
