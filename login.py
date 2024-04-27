@@ -47,11 +47,13 @@ if __name__ == '__main__':
         <div id="result-message" style="color: red; text-align: center; margin-top: 1rem;"></div>
     </div>
     """, unsafe_allow_html=True)
-
-# Si las credenciales son correctas, mostrar un mensaje de éxito
-            st.markdown('<div id="result-message" style="color: green; text-align: center; margin-top: 1rem;">Inicio de sesión exitoso.</div>', unsafe_allow_html=True)
+# Autenticar al usuario
+    if st.button("Iniciar sesión"):
+        if authenticate(username, password):
+            st.success("¡Inicio de sesión exitoso!")
+            # Aquí puedes agregar el código de tu panel o aplicación
+            st.write("Bienvenido a tu panel personalizado.")
         else:
-            # Si las credenciales son incorrectas, mostrar un mensaje de error
-            st.markdown('<div id="result-message" style="color: red; text-align: center; margin-top: 1rem;">Credenciales incorrectas. Por favor, inténtalo de nuevo.</div>', unsafe_allow_html=True)
+            st.error("Usuario o contraseña incorrectos.")
 
    
