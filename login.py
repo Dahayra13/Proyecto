@@ -5,7 +5,7 @@ st.image('logo_upch.png', use_column_width=True)
 st.title('Iniciar sesión')
 
 # Icono de usuario
-st.image('user_icon.png', width=100)
+st.image('icono.png', width=100)
 
 # Campo de texto para Nombre de Usuario
 username = st.text_input('Nombre de Usuario', placeholder='Ingrese su nombre de usuario', key='username')
