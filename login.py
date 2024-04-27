@@ -14,11 +14,31 @@ def authenticate(username_entered, password_entered):
         return False
 
 # Cargar logo de la universidad
-logo_path =  "Logo_upch.png"
+logo_path = "Logo_upch.png"
 if os.path.exists(logo_path):
     logo = st.image(logo_path, width=300, use_column_width=False)
 else:
     st.error("No se encontró el archivo de logo de la universidad.")
+
+# Función para manejar el inicio de sesión
+def handleLogin():
+    # Obtener las credenciales del usuario
+    username = st.text_input("", "", placeholder="Ingrese su usuario", key="username")
+    password = st.text_input("", "", type="password", placeholder="Ingrese su contraseña", key="password")
+
+    # Autenticar al usuario
+    if st.button("Iniciar sesión"):
+        if authenticate(username, password):
+            st.success("¡Inicio de sesión exitoso!")
+            st.markdown("""
+            <div style="text-align: center; margin-top: 2rem;">
+                <h2 style="color: #ad1c2d;">¡Bienvenido a tu Portal de Matrícula!</h2>
+                <p style="color: #0d0c0c;">Aquí podrás visualizar tu historial académico y los cursos que has llevado desde el primer ciclo hasta el décimo.</p>
+            </div>
+            """, unsafe_allow_html=True)
+            # Aquí puedes agregar el código para mostrar los cursos y el historial académico
+        else:
+            st.error("Usuario o contraseña incorrectos.")
 
 # Ejecutar la aplicación
 if __name__ == '__main__':
@@ -43,20 +63,9 @@ if __name__ == '__main__':
         </form>
         <div id="result-message" style="color: red; text-align: center; margin-top: 1rem;"></div>
     </div>
-    </div>
     """, unsafe_allow_html=True)
 
- # Autenticar al usuario
-    if st.button("Iniciar sesión"):
-        if authenticate(username, password):
-            st.success("¡Inicio de sesión exitoso!")
-            st.markdown("""
-            <div style="text-align: center; margin-top: 2rem;">
-                <h2 style="color: #ad1c2d;">¡Bienvenido a tu Portal de Matrícula!</h2>
-                <p style="color: #0d0c0c;">Aquí podrás visualizar tu historial académico y los cursos que has llevado desde el primer ciclo hasta el décimo.</p>
-            </div>
-            """, unsafe_allow_html=True)
-            # Aquí puedes agregar el código para mostrar los cursos y el historial académico
-        else:
-            st.error("Usuario o contraseña incorrectos.")
+    handleLogin()
+
+
 
