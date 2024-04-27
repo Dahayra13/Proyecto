@@ -6,6 +6,12 @@ import os
 usuario_correcto = "41650931"
 contrasenia_correcta = "cayetano"
 
+# Configurar el diseño de la página
+st.set_page_config(page_title="Gestión de Cursos UPCH", page_icon="🎓", layout="wide")
+
+# Cargar datos desde el archivo CSV
+data = pd.read_csv("database.csv")
+
 # Función para autenticar al usuario
 def authenticate(username_entered, password_entered):
     if username_entered == usuario_correcto and password_entered == contrasenia_correcta:
@@ -44,10 +50,6 @@ if __name__ == '__main__':
         <div id="result-message" style="color: red; text-align: center; margin-top: 1rem;"></div>
     </div>
     </div>
-            st.success("Inicio de sesión exitoso")
-            show_courses()
-        else:
-            st.error("Credenciales incorrectas")
     """, unsafe_allow_html=True)
 
 # Mostrar cursos
