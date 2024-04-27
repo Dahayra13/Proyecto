@@ -49,8 +49,8 @@ st.markdown(
 
 # Crear los campos de usuario y contraseña
 with st.form(key="login_form"):
-    username = st.text_input("User: ", value=User)
-    password = st.text_input("Password:", type="password", value=Password)
+    username = st.text_input(" 𝚄𝚜𝚎𝚛: ", value=User)
+    password = st.text_input("𝙿𝚊𝚜𝚜𝚠𝚘𝚛𝚍:", type="password", value=Password)
     submit = st.form_submit_button("Log In")
 
 # Cerrar el div del login-container
