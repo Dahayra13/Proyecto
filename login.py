@@ -86,7 +86,7 @@ with st.form(key="login_form"):
             username = st.text_input(" 𝚄𝚜𝚎𝚛: ", value=User, label_visibility="collapsed")
     with st.container():
         password = st.text_input("𝙿𝚊𝚜𝚜𝚠𝚘𝚛𝚍:", type="password", value=Password, label_visibility="collapsed")
-    submit = st.form_submit_button("𝕃𝕠𝕘 𝕀𝕟", use_container_width=True)
+    submit = st.form_submit_button("Iniciar Sesión", use_container_width=True)
 
 # Cerrar el div del login-container
 st.markdown("</div>", unsafe_allow_html=True)
