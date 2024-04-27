@@ -23,7 +23,7 @@ else:
 # Ejecutar la aplicación
 if __name__ == '__main__':
     st.markdown("""
-    <div style="background-color: #d6eb9d; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 1024px 768x rgba(0, 0, 0, 0.1); max-width: 600px; margin: auto;">
+    <div style="background-color: #ffffff; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 1024px 768x rgba(0, 0, 0, 0.1); max-width: 600px; margin: auto;">
         <div style="text-align: center; margin-bottom: 2rem;">
             <h1 style="color: #ad1c2d;">𝐁𝐢𝐞𝐧𝐯𝐞𝐧𝐢𝐝𝐨 𝐚𝐥 𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐌𝐚𝐭𝐫𝐢𝐜𝐮𝐥𝐚</h1>
             <p style="color: #0d0c0c;">Aᴄᴄᴇsᴏ ᴀᴜᴛᴏʀɪᴢᴀᴅᴏ ᴀʟ ᴄᴜʀʀɪ́ᴄᴜʟᴏ ᴀᴄᴀᴅᴇ́ᴍɪᴄᴏ</p>
@@ -44,8 +44,6 @@ if __name__ == '__main__':
         <div id="result-message" style="color: red; text-align: center; margin-top: 1rem;"></div>
     </div>
     </div>
-            <div class="form-group">
-                <label for="contrasenia" style="color: #030303;">𝙲𝙾𝙽𝚃𝚁𝙰𝚂𝙴𝙽̃𝙰
     """, unsafe_allow_html=True)
 
 
