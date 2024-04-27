@@ -26,7 +26,7 @@ else:
 st.markdown("""
 <div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 1024px 768x rgba(0, 0, 0, 0.1); max-width: 600px; margin: auto;">
     <div style="text-align: center; margin-bottom: 2rem;">
-        <h1 style="color: #ad1c2d;">𝔹𝕀𝔼ℕ𝕍𝔼ℕ𝕀𝔻𝕆 𝔸𝕃 ℙ𝕆ℝ𝕋𝔸𝕃 𝔻𝔼 𝕄𝔸𝕋ℝ𝕀ℂ𝕌𝕃𝔸</h1>
+        <h1 style="color: #ad1c2d;">𝐁𝐢𝐞𝐧𝐯𝐞𝐧𝐢𝐝𝐨 𝐚𝐥 𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐌𝐚𝐭𝐫𝐢𝐜𝐮𝐥𝐚</h1>
         <p style="color: #0d0c0c;">Aᴄᴄᴇsᴏ ᴀᴜᴛᴏʀɪᴢᴀᴅᴏ ᴀʟ ᴄᴜʀʀɪ́ᴄᴜʟᴏ ᴀᴄᴀᴅᴇ́ᴍɪᴄᴏ</p>
     </div>
     <form>
@@ -39,7 +39,7 @@ st.markdown("""
             <input type="password" class="form-control" id="𝙲𝙾𝙽𝚃𝚁𝙰𝚂𝙴𝙽̃A" placeholder="Ingrese su contraseña" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" required>
         </div>
         <div class="form-group" style="text-align: center;">
-            <button type="button" class="btn btn-primary" onclick="handleLogin()" style="padding: 0.5rem 2rem; background-color: #8c2e2e; color: grey; border: none; border-radius: 0.3rem;">Iniciar Sesión</button>
+            <button type="button" class="btn btn-primary" onclick="handleLogin()" style="padding: 0.5rem 2rem; background-color: #8c2e2e; color: grey; border: none; border-radius: 0.3rem;">𝐈𝐧𝐢𝐜𝐢𝐚𝐫 𝐬𝐞𝐬𝐢𝐨́𝐧</button>
         </div>
     </form>
 </div>
