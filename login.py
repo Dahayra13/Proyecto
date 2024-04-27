@@ -49,9 +49,6 @@ if __name__ == '__main__':
     </div>
     """, unsafe_allow_html=True)
 
-    username_entered = st.text_input("Usuario", "")
-    password_entered = st.text_input("Contraseña", "", type="password")
-
     if st.button("Iniciar sesión"):
         if authenticate(username_entered, password_entered):
             st.markdown('<div id="result-message" style="color: green; text-align: center; margin-top: 1rem;">Inicio de sesión exitoso.</div>', unsafe_allow_html=True)
