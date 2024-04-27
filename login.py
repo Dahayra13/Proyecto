@@ -22,7 +22,7 @@ else:
 
 # Diseño mejorado del formulario de inicio de sesión
 st.markdown("""
-<div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 1024px 768x rgba(0, 0, 0, 0.1); max-width: 600px; margin: auto;">
+<div style="background-imagen: "universidad.jpg" ; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 1024px 768x rgba(0, 0, 0, 0.1); max-width: 600px; margin: auto;">
     <div style="text-align: center; margin-bottom: 2rem;">
         <h1 style="color: #ad1c2d;">𝐁𝐢𝐞𝐧𝐯𝐞𝐧𝐢𝐝𝐨 𝐚𝐥 𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐌𝐚𝐭𝐫𝐢𝐜𝐮𝐥𝐚</h1>
         <p style="color: #0d0c0c;">Aᴄᴄᴇsᴏ ᴀᴜᴛᴏʀɪᴢᴀᴅᴏ ᴀʟ ᴄᴜʀʀɪ́ᴄᴜʟᴏ ᴀᴄᴀᴅᴇ́ᴍɪᴄᴏ</p>
@@ -54,5 +54,6 @@ def handleLogin():
         st.success("¡Usuario correcto!")
     else:
         st.error("Usuario o contraseña incorrectos.")
-
+        if __name__ == '__main__':
+    handleLogin()
 
