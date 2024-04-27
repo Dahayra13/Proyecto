@@ -14,8 +14,8 @@ st.markdown("<h2 style='text-align: center; color: #1A4D80;'>Portal de Matrícul
 
 # Crear los campos de usuario y contraseña
 with st.form(key="login_form"):
-    username = st.text_input("41650931")
-    password = st.text_input("cayetano", type="password")
+    username = st.text_input("User: ")
+    password = st.text_input("Password", type="password")
     submit = st.form_submit_button("Log In")
 
 # Verificar las credenciales y mostrar un mensaje de éxito o error
