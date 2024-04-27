@@ -31,10 +31,10 @@ st.markdown(
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
     .portal-title {
-        text-align: center;
+        text-align: justific;
         color: #1A4D80;
         margin-bottom: 10px;
-        font-size: 30px;
+        font-size: 25px;
     }
     </style>
     """,
@@ -51,7 +51,7 @@ st.markdown(
 with st.form(key="login_form"):
     username = st.text_input(" 𝚄𝚜𝚎𝚛: ", value=User)
     password = st.text_input("𝙿𝚊𝚜𝚜𝚠𝚘𝚛𝚍:", type="password", value=Password)
-    submit = st.form_submit_button("Log In")
+    submit = st.form_submit_button("𝕃𝕠𝕘 𝕀𝕟")
 
 # Cerrar el div del login-container
 st.markdown("</div>", unsafe_allow_html=True)
