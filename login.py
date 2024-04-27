@@ -39,7 +39,7 @@ st.markdown("""
             <input type="password" class="form-control" id="𝙲𝙾𝙽𝚃𝚁𝙰𝚂𝙴𝙽̃A" placeholder="Ingrese su contraseña" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" required>
         </div>
         <div class="form-group" style="text-align: center;">
-            <button type="button" class="btn btn-primary" onclick="handleLogin()" style="padding: 0.5rem 2rem; background-color: #8c2e2e; color: grey; border: none; border-radius: 0.3rem;">𝐈𝐧𝐢𝐜𝐢𝐚𝐫 𝐬𝐞𝐬𝐢𝐨́𝐧</button>
+            <button type="button" class="btn btn-primary" onclick="handleLogin()" style="padding: 0.5rem 2rem; background-color: #d14b4b; color: grey; border: none; border-radius: 0.3rem;">𝐈𝐧𝐢𝐜𝐢𝐚𝐫 𝐬𝐞𝐬𝐢𝐨́𝐧</button>
         </div>
     </form>
 </div>
