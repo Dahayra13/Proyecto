@@ -27,7 +27,7 @@ usuario_icon = st.file_uploader("icono.png", type=["png", "jpg", "jpeg"])
 st.markdown("""
 <div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 1024px 768x rgba(0, 0, 0, 0.1);">
     <div style="text-align: center; margin-bottom: 2rem;">
-        <h1 style="color: #ad1c2d;">Bienvenido a UPCH</h1>
+        <h1 style="color: #ad1c2d;">BIENVENIDO A UPCH</h1>
         <p style="color: #1c1b1c;">Inicia sesión para acceder a la aplicación</p>
     </div>
     <form action="javascript:void(0);">
