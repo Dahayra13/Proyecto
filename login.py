@@ -21,8 +21,7 @@ else:
     st.error("No se encontró el archivo de logo de la universidad.")
 
 # Cargar imagen de usuario
-st.write("user.png")
-usuario_image = st.file_uploader("user.png", type=["png", "jpg", "jpeg"])
+usuario_image = st.file_uploader("Cargar imagen de usuario", type=["png", "jpg", "jpeg"])
 
 # Diseño mejorado del formulario de inicio de sesión
 st.markdown("""
