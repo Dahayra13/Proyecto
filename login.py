@@ -13,12 +13,13 @@ import os
 usuario_correcto = "41650931"
 contrasenia_correcta = "cayetano"
 
-# Permitir al usuario cargar el archivo del logo
-logo_file = st.file_uploader("Logo_upch.png", type=["png"])
-if logo_file is not None:
-    logo = st.image(logo_file, width=250, use_column_width=False, caption="Logo de la universidad")
+# Cargar logo de la universidad
+logo_path =       "Logo_upch.png"
+if os.path.exists(logo_path):
+    logo = st.image(logo_path, width= 300, use_column_width=False)
 else:
-    st.error("Por favor, carga el archivo del logo de la universidad.")
+    st.error("No se encontró el archivo de logo de la universidad.")
+
 
 
 # Diseño mejorado del formulario de inicio de sesión
