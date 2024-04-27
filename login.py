@@ -6,7 +6,7 @@ st.set_page_config(layout="centered")
 
 # Cargar la imagen de la insignia de la universidad y el candado
 university_logo = Image.open("Logo_upch.png")
-lock_image = Image.open("lock.png")
+lock_image = Image.open("universidad.jpg")
 
 # Credenciales de inicio de sesión
 User = "41650931"
