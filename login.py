@@ -61,7 +61,7 @@ if submit:
 st.balloons()  # Agregar globos de fiesta para hacer la bienvenida más didáctica
             
             # Mostrar la página de visualización de cursos
-            st.title("Gestión de Cursos de Ingeniería Informática - UPCH")
+            st.title("Plan de Estudios de Ingeniería Informática - UPCH")
             st.write("A continuación, podrás visualizar tu plan de estudios desde el primer hasta el décimo ciclo.")
 
             # Mostrar los cursos por ciclo
