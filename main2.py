@@ -11,6 +11,13 @@ data = pd.read_csv("database.csv")
 username = "41650931"
 password = "cayetano"
 
+# Cargar logo de la universidad
+logo_path =  "Logo_upch.png"
+if os.path.exists  (logo_path):
+    logo = st.image (logo_path, width = 300, use_column_width = False)
+else:
+    st.error("No se encontró el archivo de logo de la universidad.")
+
 # Función para autenticar al usuario
 def authenticate(username_entered, password_entered):
     if username_entered == username and password_entered == password:
