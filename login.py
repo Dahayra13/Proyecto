@@ -26,8 +26,8 @@ else:
 st.markdown("""
 <div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 1024px 768x rgba(0, 0, 0, 0.1); max-width: 600px; margin: auto;">
     <div style="text-align: center; margin-bottom: 2rem;">
-        <h1 style="color: #ad1c2d;">Bienvenido al Portal de Matrícula UPCH</h1>
-        <p style="color: #0d0c0c;">Inicia sesión para acceder al plan de estudios</p>
+        <h1 style="color: #ad1c2d;">𝔹𝕀𝔼ℕ𝕍𝔼ℕ𝕀𝔻𝕆 𝔸𝕃 ℙ𝕆ℝ𝕋𝔸𝕃 𝔻𝔼 𝕄𝔸𝕋ℝ𝕀ℂ𝕌𝕃𝔸</h1>
+        <p style="color: #0d0c0c;">Aᴄᴄᴇsᴏ ᴀᴜᴛᴏʀɪᴢᴀᴅᴏ ᴀʟ ᴄᴜʀʀɪ́ᴄᴜʟᴏ ᴀᴄᴀᴅᴇ́ᴍɪᴄᴏ</p>
     </div>
     <form>
         <div class="form-group">
@@ -35,7 +35,7 @@ st.markdown("""
             <input type="text" class="form-control" id="" placeholder="Ingrese su usuario" style="width: 100%; padding: 0.7rem; margin-bottom: 1rem;" required>
         </div>
         <div class="form-group">
-            <label for="contrasenia" style="color: #030303;">CONTRASEÑA</label>
+            <label for="contrasenia" style="color: #030303;">𝙲𝙾𝙽𝚃𝚁𝙰𝚂𝙴𝙽̃𝙰</label>
             <input type="password" class="form-control" id="𝙲𝙾𝙽𝚃𝚁𝙰𝚂𝙴𝙽̃A" placeholder="Ingrese su contraseña" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" required>
         </div>
         <div class="form-group" style="text-align: center;">
