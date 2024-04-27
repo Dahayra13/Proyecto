@@ -8,8 +8,8 @@ st.set_page_config(page_title="Gestión de Cursos UPCH", page_icon="🎓", layou
 data = pd.read_csv("database.csv")
 
 # Credenciales de acceso
-username = "coordinador@upch.edu.pe"
-password = "upch123"
+username = "41650931"
+password = "cayetano"
 
 # Función para autenticar al usuario
 def authenticate(username_entered, password_entered):
