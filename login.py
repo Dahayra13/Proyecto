@@ -13,11 +13,12 @@ import os
 usuario_correcto = "41650931"
 contrasenia_correcta = "cayetano"
 
-# Cargar logo de la universidad centrado con margen izquierdo
-logo_path = "Logo_upch.png"
-    st.image(logo_path, width=250, use_column_width=False, style="display: block; margin: auto; margin-left: 20px;")
+# Permitir al usuario cargar el archivo del logo
+logo_file = st.file_uploader("Logo_upch.png", type=["png"])
+if logo_file is not None:
+    logo = st.image(logo_file, width=250, use_column_width=False, caption="Logo de la universidad")
 else:
-    st.error("No se encontró el archivo de logo de la universidad.")
+    st.error("Por favor, carga el archivo del logo de la universidad.")
 
 
 # Diseño mejorado del formulario de inicio de sesión
