@@ -1,21 +1,49 @@
 import streamlit as st
+import os
 
-# Título de la página con el logo de la universidad
-st.image('logo_upch.png', use_column_width=True)
-st.title('Iniciar sesión')
+# Definir credenciales de inicio de sesión
+usuario_correcto = "41650931"
+contrasenia_correcta = "cayetano"
 
-# Icono de usuario
-st.image('icono.png', width=100)
+# Cargar logo de la universidad y icono de usuario
+logo = st.file_uploader("Carga el logo de UPCH", type=["png", "jpg", "jpeg"])
+usuario_icon = st.file_uploader("Carga el icono de usuario", type=["png", "jpg", "jpeg"])
 
-# Campo de texto para Nombre de Usuario
-username = st.text_input('Nombre de Usuario', placeholder='Ingrese su nombre de usuario', key='username')
+# Ruta de la imagen de fondo
+fondo_path = "tu_ruta_del_fondo.jpg"
 
-# Botón para continuar
-if st.button('CONTINUAR', key='continue_btn'):
-    # Aquí puedes agregar la lógica para manejar el inicio de sesión
+# Diseño del formulario de inicio de sesión
+st.markdown("""
+<div style="background-image: url('{fondo_path}'); background-size: cover; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 0 50px rgba(0, 0, 0, 0.1); width: 1024px; height: 768px;">
+    <div style="text-align: center; margin-bottom: 2rem;">
+        {'<img src="data:image/png;base64,{}" width="250">'.format(logo.getvalue().decode()) if logo else ""} {'<img src="data:image/png;base64,{}" width="50" style="margin-left: 1rem;">'.format(usuario_icon.getvalue().decode()) if usuario_icon else ""}
+        <h1 style="color: #ad1c2d;">Bienvenido a UPCH</h1>
+        <p style="color: #1c1b1c;">Inicia sesión para acceder a la aplicación</p>
+    </div>
+    <form action="javascript:void(0);">
+        <div class="form-group">
+            <label for="usuario" style="color: #262424;">USUARIO</label>
+            <input type="text" class="form-control" id="USUARIO" placeholder="Ingrese su usuario" required>
+        </div>
+        <div class="form-group">
+            <label for="contrasenia" style="color: #262424;">CONTRASEÑA</label>
+            <input type="password" class="form-control" id="contrasenia" placeholder="Ingrese su contraseña" required>
+        </div>
+        <div class="form-group" style="text-align: center;">
+            <button type="submit" class="btn btn-primary" onclick="handleLogin()">Iniciar Sesión</button>
+        </div>
+    </form>
+</div>
+""".format(fondo_path=fondo_path), unsafe_allow_html=True)
 
-# Enlace para recuperar contraseña
-st.write('[¿Olvidaste tu contraseña?](#)', unsafe_allow_html=True)
+# Función para manejar el inicio de sesión
+def handleLogin():
+    usuario = st.text_input("Usuario", key="usuario")
+    contrasenia = st.text_input("Contraseña", type="password", key="contrasenia")
 
-# Selector de idioma
-language = st.selectbox('Selecciona el idioma', ['Español (Latinoamérica)', 'English', 'Otros'])
+    if usuario == usuario_correcto and contrasenia == contrasenia_correcta:
+        st.success("¡Inicio de sesión exitoso!")
+    else:
+        st.error("Usuario o contraseña incorrectos.")
+{'<img src="data:icono.png;base64,{}" width="250">'.format(logo.getvalue().decode()) if logo else ""} {'<img src="icono.png;base64,{}" width="50" style="margin-left: 1rem;">'.format(usuario_icon.getvalue().decode()) if usuario_icon else ""}
+
