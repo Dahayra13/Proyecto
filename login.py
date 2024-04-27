@@ -14,6 +14,7 @@ usuario_correcto = "41650931"
 contrasenia_correcta = "cayetano"
 
 # Cargar logo de la universidad centrado con margen izquierdo
+logo_path = "Logo_upch.png"
 if os.path.exists(logo_path):
     st.image(logo_path, width=250, use_column_width=False, style="display: block; margin: auto; margin-left: 20px;")
 else:
