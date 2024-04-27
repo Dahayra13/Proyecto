@@ -22,20 +22,59 @@ st.markdown(
         align-items: center;
         height: 100vh;
     }
+    .login-container {
+        background-color: white;
+        width: 400px;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
     .portal-title {
         text-align: center;
-        color: #fcfcfc;
-        margin-bottom: 10px;
-        font-size: 25px;
+        color: #1A4D80;
+        margin-bottom: 20px;
+        font-size: 28px;
+        font-weight: bold;
     }
-
+    .form-field {
+        margin-bottom: 20px;
+    }
+    .form-field label {
+        font-size: 16px;
+        font-weight: bold;
+        color: #1A4D80;
+        margin-bottom: 5px;
+    }
+    .form-field input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: #f0f0f0;
+        font-size: 16px;
+    }
+    .submit-button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: #1A4D80;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .submit-button:hover {
+        background-color: #134266;
+    }
     </style>
     """,
     unsafe_allow_html=True
 )
 
 st.image(university_logo, use_column_width=True)
-st.markdown("<div class='login-container'><h3 class='portal-title'> 𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐌𝐚𝐭𝐫𝐢̄𝐜𝐮𝐥𝐚 - 𝐔𝐏𝐂𝐇 </h3>", unsafe_allow_html=True)
+st.markdown("<div class='login-container'><h3 class='portal-title'>Portal de Matrícula - UPCH</h3>", unsafe_allow_html=True)
 
 # Crear los campos de usuario y contraseña
 with st.form(key="login_form"):
