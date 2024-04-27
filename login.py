@@ -43,18 +43,14 @@ if __name__ == '__main__':
         </form>
         <div id="result-message" style="color: red; text-align: center; margin-top: 1rem;"></div>
     </div>
+    </div>
+            <div class="form-group">
+                <label for="contrasenia" style="color: #030303;">𝙲𝙾𝙽𝚃𝚁𝙰𝚂𝙴𝙽̃𝙰
     """, unsafe_allow_html=True)
 
-    # Obtener las credenciales del usuario
-    username = st.text_input("", "", placeholder="Ingrese su usuario", key="username")
-    password = st.text_input("", "", type="password", placeholder="Ingrese su contraseña", key="password")
 
-    # Autenticar al usuario
-    if st.button("Iniciar sesión"):
-        if authenticate(username, password):
-            st.success("¡Inicio de sesión exitoso!")
-        else:
-            st.error("Usuario o contraseña incorrectos.")
+
+
 
 
 
