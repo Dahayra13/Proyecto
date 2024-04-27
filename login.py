@@ -13,7 +13,7 @@ else:
     st.error("No se encontró el archivo de logo de la universidad.")
     
 # Ruta de la imagen de fondo
-fondo_path = "tu_ruta_del_fondo.jpg"
+fondo_path = "universidad.jpg"
 
 # Diseño del formulario de inicio de sesión
 st.markdown("""
