@@ -11,9 +11,6 @@ university_logo = Image.open("Logo_upch.png")
 User = "41650931"
 Password = "cayetano"
 
-# Cargar datos desde el archivo CSV
-data = pd.read_csv("database.csv")
-
 # Crear el diseño del formulario de inicio de sesión
 st.markdown(
     """
@@ -59,24 +56,7 @@ if submit:
 
 #########################################################################################
 
-# Mostrar información del alumno
-    st.markdown("<h2 style='text-align: center; color: #fcfcfc;'>¡Bienvenido, Estudiante!</h2>", unsafe_allow_html=True)
-    
-    # Obtener los datos del alumno desde el archivo CSV
-    student_data = data[data['ID'] == int(username)]
-    
-    # Mostrar el plan de estudios del alumno
-    st.markdown("<h3 style='color: #fcfcfc;'>Plan de Estudios</h3>", unsafe_allow_html=True)
-    for ciclo in range(1, 11):
-        materias = student_data[f'Ciclo {ciclo}'].dropna().tolist()
-        if materias:
-            st.markdown(f"<h4 style='color: #fcfcfc;'>Ciclo {ciclo}</h4>", unsafe_allow_html=True)
-            for materia in materias:
-                st.write(f"- {materia}")
-    
-    # Mostrar la plantilla de grafos
-    st.markdown("<h3 style='color: #fcfcfc;'>Plantilla de Grafos</h3>", unsafe_allow_html=True)
-    st.image("https://d41chssnpqdne.cloudfront.net/user_upload_by_module/chat_bot/files/982946/UmvaSdeIctqoSwrX.jpg?Expires=1715458372&Signature=c4eF7nmi7LjjeHJ80Cdd8xFuWCyGeumjSGlpyrXoWdzVss4SCJOhiKyaSGUY6g9hkABV48UPDtESXipdenZSGtaxE~iF5w0Btj1DhcrsNz2G1ui2q67wyt~pBv12Ve6Z8mfQRW0fi3Y3F3BnIdGt8g-eUTSNHmQS6DCluuSKD78uy15fDZ1nIO44CCewwnU2Esbn1CWjh0RCdid8RlN33tsEI21tC4zIxgJMV0wpclYhbImmgQ0NougBm1EaEUSCWcHu9l79ifS5Aa2CWnNJGWWwFIWSLM8D20Cpv8D8eBFXwBVCfEi~WiHlKyzOnlS-J6rc5Q5Gg38dWdFCI9hcAQ__&Key-Pair-Id=K3USGZIKWMDCSX", use_column_width=True)
+
 
 
 
