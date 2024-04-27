@@ -13,28 +13,30 @@ import os
 usuario_correcto = "41650931"
 contrasenia_correcta = "cayetano"
 
-# Cargar logo de la universidad
+# Cargar logo de la universidad centrado
 logo_path = "Logo_upch.png"
 if os.path.exists(logo_path):
-    logo = st.image(logo_path, width= 250, use_column_width=False)
+    st.image(logo_path, width=250, use_column_width=False, style="display: block; margin: auto;")
 else:
     st.error("No se encontró el archivo de logo de la universidad.")
 
-
-# Diseño mejorado del formulario de inicio de sesión
+# Diseño mejorado del formulario de inicio de sesión con fuente y estilos personalizados
 st.markdown("""
-<div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 1024px 768x rgba(0, 0, 0, 0.1); max-width: 600px; margin: auto;">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+</style>
+<div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 1024px 768x rgba(0, 0, 0, 0.1); max-width: 600px; margin: auto; font-family: 'Roboto', sans-serif;">
     <div style="text-align: center; margin-bottom: 2rem;">
-        <h1 style="color: #ad1c2d;">Bienvenido al Portal de Matrícula UPCH</h1>
-        <p style="color: #1c1b1c;">Inicia sesión para acceder a la aplicación</p>
+        <h1 style="color: #ad1c2d; font-weight: bold; font-size: 24px;">Bienvenido al Portal de Matrícula UPCH</h1>
+        <p style="color: #1c1b1c; font-size: 16px;">Inicia sesión para acceder a la aplicación</p>
     </div>
     <form>
         <div class="form-group">
-            <label for="usuario" style="color: #262424;">USUARIO</label>
+            <label for="usuario" style="color: #262424; font-weight: bold; font-size: 18px;">USUARIO</label>
             <input type="text" class="form-control" id="USUARIO" placeholder="Ingrese su usuario" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" required>
         </div>
         <div class="form-group">
-            <label for="contrasenia" style="color: #262424;">CONTRASEÑA</label>
+            <label for="contrasenia" style="color: #262424; font-weight: bold; font-size: 18px;">CONTRASEÑA</label>
             <input type="password" class="form-control" id="contrasenia" placeholder="Ingrese su contraseña" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" required>
         </div>
         <div class="form-group" style="text-align: center;">
@@ -51,6 +53,7 @@ def handleLogin():
 
     if usuario == usuario_correcto and contrasenia == contrasenia_correcta:
         st.success("¡Inicio de sesión exitoso!")
+        # Aquí puedes mostrar el plan de estudios después del inicio de sesión exitoso
     else:
         st.error("Usuario o contraseña incorrectos.")
 
