@@ -32,8 +32,7 @@ st.markdown(
     .portal-title {
         text-align: center;
         color: #1A4D80;
-        margin-bottom: 20px;
-        font-size: 10px;
+        margin-bottom: 10px;
     }
     </style>
     """,
@@ -64,6 +63,7 @@ if submit:
         st.success("¡correct user!")
     else:
         st.error("Invalid username or password. Please try again.")
+
 
 
 
