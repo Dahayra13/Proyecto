@@ -22,13 +22,13 @@ st.markdown("<h3 style='text-align: center; color: #f8f9fa;'>Portal de Plan de E
 # Crear los campos de usuario y contraseña
 with st.form(key="login_form"):
     username = st.text_input("User: ", value=User)
-    password = st.text_input("Password", type="password", value=Password)
+    password = st.text_input("Password:", type="password", value=Password)
     submit = st.form_submit_button("Log In")
 
 # Verificar las credenciales y mostrar un mensaje de éxito o error
 if submit:
     if username == User and password == Password:
-        st.success("Logged in successfully!")
+        st.success("¡correct user!")
     else:
         st.error("Invalid username or password. Please try again.")
 
