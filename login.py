@@ -23,16 +23,12 @@ st.markdown(
         height: 100vh;
     }
     .login-container {
-        background-color: #9ee6cf;
+        background-color: #fcfcfc;
         width: 300px;
         padding: 30px;
         border-radius: 20px;
         align-items: center;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .portal-title {
-        text-align: center;
-    }
     </style>
     """,
     unsafe_allow_html=True
