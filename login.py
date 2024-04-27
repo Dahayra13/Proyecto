@@ -16,7 +16,7 @@ contrasenia_correcta = "cayetano"
 # Cargar logo de la universidad
 logo_path = "Logo_upch.png"
 if os.path.exists(logo_path):
-    logo = st.image(logo_path, width=150, use_column_width=False)
+    logo = st.image(logo_path, width=250, use_column_width=False)
 else:
     st.error("No se encontró el archivo de logo de la universidad.")
 
@@ -24,17 +24,17 @@ else:
 st.markdown("""
 <div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
     <div style="text-align: center; margin-bottom: 2rem;">
-        <h1 style="color: #007bff;">Bienvenido a UPCH</h1>
-        <p style="color: #6c757d;">Inicia sesión para acceder a la aplicación</p>
+        <h1 style="color: #ad1c2d;">Bienvenido a UPCH</h1>
+        <p style="color: #1c1b1c;">Inicia sesión para acceder a la aplicación</p>
     </div>
     <form action="javascript:void(0);">
         <div class="form-group">
-            <label for="usuario" style="color: #495057;">Usuario</label>
-            <input type="text" class="form-control" id="usuario" placeholder="Ingresa tu usuario" required>
+            <label for="usuario" style="color: #262424;">USUARIO</label>
+            <input type="text" class="form-control" id="USUARIO" placeholder="Ingrese su usuario" required>
         </div>
         <div class="form-group">
-            <label for="contrasenia" style="color: #495057;">Contraseña</label>
-            <input type="password" class="form-control" id="contrasenia" placeholder="Ingresa tu contraseña" required>
+            <label for="contrasenia" style="color: #262424;">Contraseña</label>
+            <input type="password" class="form-control" id="contrasenia" placeholder="Ingrese su contraseña" required>
         </div>
         <div class="form-group" style="text-align: center;">
             <button type="submit" class="btn btn-primary" onclick="handleLogin()">Iniciar Sesión</button>
