@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 
 # Configurar el diseño de la página
-<h1 style="color: #ad1c2d;">𝐁𝐢𝐞𝐧𝐯𝐞𝐧𝐢𝐝𝐨 𝐚𝐥 𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐌𝐚𝐭𝐫𝐢𝐜𝐮𝐥𝐚</h1>
+st.set_page_config(layout="centered")
 
 # Cargar la imagen de la insignia de la universidad
 university_logo = Image.open("Logo_upch.png")
@@ -31,7 +31,7 @@ st.markdown(
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
     .portal-title {
-        text-align: justific;
+        text-align: center;
         color: #1A4D80;
         margin-bottom: 10px;
         font-size: 25px;
@@ -42,10 +42,7 @@ st.markdown(
 )
 
 st.image(university_logo, use_column_width=True)
-st.markdown(
-    "<div class='login-container'><h3 class='portal-title'>𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐩𝐥𝐚𝐧 𝐝𝐞 𝐄𝐬𝐭𝐮𝐝𝐢𝐨𝐬</h3>",
-    unsafe_allow_html=True
-)
+st.markdown("<div class='login-container'><h3 class='portal-title'>𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐩𝐥𝐚𝐧 𝐝𝐞 𝐄𝐬𝐭𝐮𝐝𝐢𝐨𝐬</h3>", unsafe_allow_html=True)
 
 # Crear los campos de usuario y contraseña
 with st.form(key="login_form"):
@@ -62,6 +59,7 @@ if submit:
         st.success("¡correct user!")
     else:
         st.error("Invalid username or password. Please try again.")
+
 
 
 
