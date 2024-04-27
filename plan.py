@@ -7,8 +7,11 @@ data = pd.read_csv("database.csv")
 # Configurar el diseño de la página
 st.set_page_config(page_title="Gestión de Cursos UPCH", page_icon=":books:", layout="wide")
 
+# Bienvenida al estudiante con globos
+st.balloons()
+st.write("# ¡Bienvenido, Estudiante! 🎈🎉")
+
 # Encabezado y descripción
-st.title("Gestión de Cursos de Ingeniería Informática - UPCH")
 st.write("Esta aplicación web permite visualizar los cursos de los 10 ciclos de la carrera de Ingeniería Informática en la Universidad Peruana Cayetano Heredia (UPCH), junto con sus prerrequisitos y detalles.")
 
 # Estilos CSS
@@ -35,10 +38,6 @@ def get_bg_color(ciclo):
         "DECIMO": "#F5DEB3"    # Wheat
     }
     return colores.get(ciclo, "")  # Obtener el color correspondiente al ciclo o vacío si no hay coincidencia
-
-# Mostrar bienvenida al estudiante con globitos
-st.balloons()
-st.write("¡Bienvenido, Estudiante!")
 
 # Mostrar los cursos por ciclo con colores personalizados
 for ciclo in data["CICLO"].unique():
