@@ -4,9 +4,9 @@ from PIL import Image
 # Configurar el diseño de la página
 st.set_page_config(layout="centered")
 
-# Cargar la imagen de la insignia de la universidad
+# Cargar la imagen de la insignia de la universidad y el candado
 university_logo = Image.open("Logo_upch.png")
-lock_image = Image.open("universidad.jpg")  # Carga la imagen del candado
+lock_image = Image.open("lock.png")
 
 # Credenciales de inicio de sesión
 User = "41650931"
@@ -30,27 +30,30 @@ st.markdown(
         font-size: 25px;
     }
     .form-field {
-        display: flex;
-        align-items: center;
+        position: relative;
         margin-bottom: 20px;
     }
     .form-field label {
         font-size: 16px;
         font-weight: bold;
         color: #fcfcfc;
-        margin-right: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
     }
     .form-field input {
-        flex: 1;
-        padding: 10px;
+        width: 100%;
+        padding: 10px 20px;
         border: none;
         border-radius: 5px;
         font-size: 16px;
-    }
-    .form-field img {
-        width: 24px;
-        height: 24px;
-        margin-left: 10px;
+        background-image: url('lock.png');
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        background-size: 24px 24px;
+        padding-left: 40px;
     }
     .submit-button {
         width: 100%;
@@ -77,23 +80,8 @@ st.markdown("<div class='login-container'><h3 class='portal-title'> 𝐏𝐨𝐫
 
 # Crear los campos de usuario y contraseña
 with st.form(key="login_form"):
-    with st.container():
-        with st.container():
-            username_container = st.container()
-            with username_container:
-                st.markdown("<div class='form-field'>", unsafe_allow_html=True)
-                st.markdown("<label> 𝚄𝚜𝚎𝚛: </label>", unsafe_allow_html=True)
-                username = st.text_input(" ", value=User, label_visibility="collapsed")
-                st.image(lock_image, use_column_width=False)
-                st.markdown("</div>", unsafe_allow_html=True)
-    with st.container():
-        password_container = st.container()
-        with password_container:
-            st.markdown("<div class='form-field'>", unsafe_allow_html=True)
-            st.markdown("<label>𝙿𝚊𝚜𝚜𝚠𝚘𝚛𝚍:</label>", unsafe_allow_html=True)
-            password = st.text_input(" ", type="password", value=Password, label_visibility="collapsed")
-            st.image(lock_image, use_column_width=False)
-            st.markdown("</div>", unsafe_allow_html=True)
+    username = st.text_input(" 𝚄𝚜𝚎𝚛: ", value=User, label_visibility="collapsed")
+    password = st.text_input("𝙿𝚊𝚜𝚜𝚠𝚘𝚛𝚍:", type="password", value=Password, label_visibility="collapsed")
     submit = st.form_submit_button("𝕃𝕠𝕘 𝕀𝕟")
 
 # Cerrar el div del login-container
