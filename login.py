@@ -16,7 +16,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #0d2b69;
+        background-color: #070808;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -34,7 +34,7 @@ st.markdown(
         text-align: center;
         color: #1A4D80;
         margin-bottom: 10px;
-        font-size: 80px;
+        font-size: 30px;
     }
     </style>
     """,
