@@ -55,8 +55,4 @@ def handleLogin():
     else:
         st.error("Usuario o contraseña incorrectos.")
 
-# Ejecutar la aplicación
-if __name__ == '__main__':
-    handleLogin()
-
 
