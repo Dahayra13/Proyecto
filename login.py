@@ -22,8 +22,8 @@ st.markdown(
         background-color: #9ee6cf;
         width: 300px;
         padding: 5px;
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         margin: 50px auto;
     }
     .portal-title {
@@ -38,7 +38,7 @@ st.markdown(
 
 st.image(university_logo, use_column_width=True)
 st.markdown(
-    "<div class='login-container'><h3 class='portal-title'>Portal de Plan de Estudios</h3>",
+    "<div class='login-container'><h3 class='portal-title'>𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐩𝐥𝐚𝐧 𝐝𝐞 𝐄𝐬𝐭𝐮𝐝𝐢𝐨𝐬</h3>",
     unsafe_allow_html=True
 )
 
