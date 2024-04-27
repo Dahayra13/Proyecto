@@ -27,13 +27,14 @@ st.markdown(
         width: 300px;
         padding: 30px;
         border-radius: 20px;
+        align-items: center;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
     .portal-title {
         text-align: center;
         color: #1A4D80;
-        margin-bottom: 40px;
-        font-size: 24px;
+        margin-bottom: 60px;
+        font-size: 50px;
     }
     </style>
     """,
