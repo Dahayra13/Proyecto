@@ -44,6 +44,12 @@ if __name__ == '__main__':
         <div id="result-message" style="color: red; text-align: center; margin-top: 1rem;"></div>
     </div>
     </div>
+    if st.button("Ingresar"):
+        if authenticate(username_entered, password_entered):
+            st.success("Inicio de sesión exitoso")
+            show_courses()
+        else:
+            st.error("Credenciales incorrectas")
     """, unsafe_allow_html=True)
 
 
