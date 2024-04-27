@@ -1,66 +1,42 @@
 import streamlit as st
-import os
+from PIL import Image
 
-# Definir credenciales de inicio de sesión
-usuario_correcto = "41650931"
-contrasenia_correcta = "cayetano"
+# Configurar el diseño de la página
+st.set_page_config(page_title="UPCH - Portal de Matrícula", page_icon=":mortar_board:")
 
-# Función para autenticar al usuario
-def authenticate(username_entered, password_entered):
-    if username_entered == usuario_correcto and password_entered == contrasenia_correcta:
-        return True
+# Cargar la imagen de la insignia de la universidad
+university_logo = Image.open("Logo_upch.png")
+
+# Crear el diseño del formulario de inicio de sesión
+st.markdown("<h1 style='text-align: center; color: #1A4D80;'>Universidad Cayetano</h1>", unsafe_allow_html=True)
+st.image(university_logo, use_column_width=True)
+st.markdown("<h2 style='text-align: center; color: #1A4D80;'>Portal de Matrícula</h2>", unsafe_allow_html=True)
+
+# Crear los campos de usuario y contraseña
+with st.form(key="login_form"):
+    username = st.text_input("41650931")
+    password = st.text_input("cayetano", type="password")
+    submit = st.form_submit_button("Log In")
+
+# Verificar las credenciales y mostrar un mensaje de éxito o error
+if submit:
+    if username == "admin" and password == "password":
+        st.success("Logged in successfully!")
     else:
-        return False
+        st.error("Invalid username or password. Please try again.")
 
-# Cargar logo de la universidad
-logo_path =  "Logo_upch.png"
-if os.path.exists(logo_path):
-    logo = st.image(logo_path, width=300, use_column_width=False)
-else:
-    st.error("No se encontró el archivo de logo de la universidad.")
+# Aplicar el fondo de color "Cayetano"
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #1A4D80;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
-# Ejecutar la aplicación
-if __name__ == '__main__':
-    st.markdown("""
-    <div style="background-color: #d6eb9d; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 1024px 768x rgba(0, 0, 0, 0.1); max-width: 600px; margin: auto;">
-        <div style="text-align: center; margin-bottom: 2rem;">
-            <h1 style="color: #ad1c2d;">𝐁𝐢𝐞𝐧𝐯𝐞𝐧𝐢𝐝𝐨 𝐚𝐥 𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐌𝐚𝐭𝐫𝐢𝐜𝐮𝐥𝐚</h1>
-            <p style="color: #0d0c0c;">Aᴄᴄᴇsᴏ ᴀᴜᴛᴏʀɪᴢᴀᴅᴏ ᴀʟ ᴄᴜʀʀɪ́ᴄᴜʟᴏ ᴀᴄᴀᴅᴇ́ᴍɪᴄᴏ</p>
-        </div>
-        <form>
-            <div class="form-group">
-                <label for="usuario" style="color: #030303;">𝚄𝚂𝚄𝙰𝚁𝙸𝙾:</label>
-                <input type="text" class="form-control" id="usuario" placeholder="Ingrese su usuario" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" required>
-            </div>
-            <div class="form-group">
-                <label for="contrasenia" style="color: #030303;">𝙲𝙾𝙽𝚃𝚁𝙰𝚂𝙴𝙽̃𝙰:</label>
-                <input type="password" class="form-control" id="contrasenia" placeholder="Ingrese su contraseña" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" required>
-            </div>
-            <div class="form-group" style="text-align: center;">
-                <button type="button" class="btn btn-primary" onclick="handleLogin()" style="padding: 0.5rem 2rem; background-color: #9c2121; color: grey; border: none; border-radius: 0.5rem;">𝐈𝐧𝐢𝐜𝐢𝐚𝐫 𝐬𝐞𝐬𝐢𝐨́𝐧</button>
-            </div>
-        </form>
-        <div id="result-message" style="color: red; text-align: center; margin-top: 1rem;"></div>
-    </div>
-    """, unsafe_allow_html=True)
-
-    # Obtener las credenciales del usuario
-    username = st.text_input("", "", placeholder="Ingrese su usuario", key="username")
-    password = st.text_input("", "", type="password", placeholder="Ingrese su contraseña", key="password")
-
-    # Autenticar al usuario
-    if st.button("Iniciar sesión"):
-        if authenticate(username, password):
-            st.success("¡Inicio de sesión exitoso!")
-            st.markdown("""
-            <div style="text-align: center; margin-top: 2rem;">
-                <h2 style="color: #ad1c2d;">¡Bienvenido a tu Portal de Matrícula!</h2>
-                <p style="color: #0d0c0c;">Aquí podrás visualizar tu historial académico y los cursos que has llevado desde el primer ciclo hasta el décimo.</p>
-            </div>
-            """, unsafe_allow_html=True)
-            # Aquí puedes agregar el código para mostrar los cursos y el historial académico
-        else:
-            st.error("Usuario o contraseña incorrectos.")
 
 
 
