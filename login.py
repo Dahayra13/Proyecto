@@ -5,6 +5,9 @@ import os
 usuario_correcto = "41650931"
 contrasenia_correcta = "cayetano"
 
+# Cargar logo de la universidad
+logo = st.file_uploader("Carga el logo de UPCH", type=["png", "jpg", "jpeg"])
+
 # Ruta de la imagen de fondo
 fondo_path = "tu_ruta_del_fondo.jpg"
 
@@ -12,7 +15,7 @@ fondo_path = "tu_ruta_del_fondo.jpg"
 st.markdown("""
 <div style="background-image: url('{fondo_path}'); background-size: cover; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 0 50px rgba(0, 0, 0, 0.1); width: 1024px; height: 768px;">
     <div style="text-align: center; margin-bottom: 2rem;">
-        <img src="{logo_path}" width="250" />
+        {'<img src="data:image/png;base64,{}" width="250">'.format(logo.getvalue().decode()) if logo else ""}
         <h1 style="color: #ad1c2d;">Bienvenido a UPCH</h1>
         <p style="color: #1c1b1c;">Inicia sesión para acceder a la aplicación</p>
     </div>
@@ -30,7 +33,7 @@ st.markdown("""
         </div>
     </form>
 </div>
-""".format(fondo_path=fondo_path, logo_path="Logo_upch.png"), unsafe_allow_html=True)
+""".format(fondo_path=fondo_path), unsafe_allow_html=True)
 
 # Función para manejar el inicio de sesión
 def handleLogin():
