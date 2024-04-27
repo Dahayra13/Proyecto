@@ -13,18 +13,21 @@ import os
 usuario_correcto = "41650931"
 contrasenia_correcta = "cayetano"
 
-# Cargar icono de usuario
-usuario_icon = st.file_uploader("icono.png", type=["png", "jpg", "jpeg"])
+# Cargar logo de la universidad
+logo_path = "Logo_upch.png"
+if os.path.exists(logo_path):
+    logo = st.image(logo_path, width=250, use_column_width=False)
+else:
+    st.error("No se encontró el archivo de logo de la universidad.")
 
 # Diseño del formulario de inicio de sesión
 st.markdown("""
 <div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 1024px 768x rgba(0, 0, 0, 0.1);">
     <div style="text-align: center; margin-bottom: 2rem;">
-        <img src="Logo_upch.png" alt="Logo UPCH" width="250">
-        <h1 style="color: #ad1c2d;">BIENVENIDO A UPCH</h1>
+        <h1 style="color: #ad1c2d;">Bienvenido a UPCH</h1>
         <p style="color: #1c1b1c;">Inicia sesión para acceder a la aplicación</p>
     </div>
-    <form action="javascript:void(0);" style="max-width: 300px; margin: 0 auto;">
+    <form action="javascript:void(0);">
         <div class="form-group">
             <label for="usuario" style="color: #262424;">USUARIO</label>
             <input type="text" class="form-control" id="USUARIO" placeholder="Ingrese su usuario" required>
