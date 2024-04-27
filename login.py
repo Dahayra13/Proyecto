@@ -20,8 +20,6 @@ if os.path.exists  (logo_path):
 else:
     st.error("No se encontró el archivo de logo de la universidad.")
 
-
-
 # Diseño mejorado del formulario de inicio de sesión
 st.markdown("""
 <div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 1024px 768x rgba(0, 0, 0, 0.1); max-width: 600px; margin: auto;">
@@ -52,6 +50,13 @@ def handleLogin():
 
     if usuario == usuario_correcto and contrasenia == contrasenia_correcta:
         st.success("¡Inicio de sesión exitoso!")
+    elif usuario == usuario_correcto:
+        st.success("¡Usuario correcto!")
     else:
         st.error("Usuario o contraseña incorrectos.")
+
+# Ejecutar la aplicación
+if __name__ == '__main__':
+    handleLogin()
+
 
