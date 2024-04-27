@@ -11,7 +11,7 @@ import streamlit as st
 import pandas as pd
 
 # Cargar datos desde el archivo CSV
-data = pd.read_csv("/content/database.csv")
+data = pd.read_csv("database.csv")
 
 # Mostrar cursos
 def show_courses():
