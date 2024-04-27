@@ -32,30 +32,27 @@ st.markdown(
     .portal-title {
         text-align: center;
         color: #1A4D80;
-        margin-bottom: 10px;
+        margin-bottom: 40px;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Centrar verticalmente la imagen y el título
-col1, col2, col3 = st.columns([1, 2, 1])
-with col2:
-    st.image(university_logo, use_column_width=True)
-    st.markdown(
-        "<div class='login-container'><h3 class='portal-title'>𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐩𝐥𝐚𝐧 𝐝𝐞 𝐄𝐬𝐭𝐮𝐝𝐢𝐨𝐬</h3>",
-        unsafe_allow_html=True
-    )
+st.image(university_logo, use_column_width=True)
+st.markdown(
+    "<div class='login-container'><h3 class='portal-title'>𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐩𝐥𝐚𝐧 𝐝𝐞 𝐄𝐬𝐭𝐮𝐝𝐢𝐨𝐬</h3>",
+    unsafe_allow_html=True
+)
 
-    # Crear los campos de usuario y contraseña
-    with st.form(key="login_form"):
-        username = st.text_input("User: ", value=User)
-        password = st.text_input("Password:", type="password", value=Password)
-        submit = st.form_submit_button("Log In")
+# Crear los campos de usuario y contraseña
+with st.form(key="login_form"):
+    username = st.text_input("User: ", value=User)
+    password = st.text_input("Password:", type="password", value=Password)
+    submit = st.form_submit_button("Log In")
 
-    # Cerrar el div del login-container
-    st.markdown("</div>", unsafe_allow_html=True)
+# Cerrar el div del login-container
+st.markdown("</div>", unsafe_allow_html=True)
 
 # Verificar las credenciales y mostrar un mensaje de éxito o error
 if submit:
@@ -63,6 +60,7 @@ if submit:
         st.success("¡correct user!")
     else:
         st.error("Invalid username or password. Please try again.")
+
 
 
 
