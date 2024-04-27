@@ -25,7 +25,7 @@ if __name__ == '__main__':
     st.markdown("""
     <div style="background-color: #ffffff; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 1024px 768x rgba(0, 0, 0, 0.1); max-width: 600px; margin: auto;">
         <div style="text-align: center; margin-bottom: 2rem;">
-            <h1 style="color: #ad1c2d;">𝐁𝐢𝐞𝐧𝐯𝐞𝐧𝐢𝐝𝐨 𝐚𝐥 𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐌𝐚𝐭𝐫𝐢𝐜𝐮𝐥𝐚</h1>
+            <h1 style="color: #ad1c2d;">𝐏𝐨𝐫𝐭𝐚𝐥 𝐝𝐞 𝐌𝐚𝐭𝐫𝐢𝐜𝐮𝐥𝐚</h1>
             <p style="color: #0d0c0c;">Aᴄᴄᴇsᴏ ᴀᴜᴛᴏʀɪᴢᴀᴅᴏ ᴀʟ ᴄᴜʀʀɪ́ᴄᴜʟᴏ ᴀᴄᴀᴅᴇ́ᴍɪᴄᴏ</p>
         </div>
         <form>
@@ -46,71 +46,17 @@ if __name__ == '__main__':
     </div>
     """, unsafe_allow_html=True)
 
-# Mostrar cursos
-# Cargar datos desde el archivo CSV
-data = pd.read_csv("database.csv")
-
-def show_courses():
-    st.markdown("""
-        <style>
-        body {
-            background-color: #FFFAF0; /* Amarillo claro */
-            color: #333333; /* Gris oscuro */
-        }
-        </style>
-    """, unsafe_allow_html=True)
-    st.title("Gestión de Cursos de Ingeniería Informática - UPCH")
-
-    # Estilos CSS
-    hide_table_row_index = """
-        <style>
-        tbody th {display:none;}
-        .blank {display:none;}
-        </style>
-    """
-    st.markdown(hide_table_row_index, unsafe_allow_html=True)
-
-    # Función para obtener el color de fondo según el ciclo
-    def get_bg_color(ciclo, prereq):
-        if prereq == "NINGUNO":
-            return "#D3D3D3"  # Gris claro
-        elif ciclo.startswith("PRIMER"):
-            return "#F0F8FF"  # Azul claro
-        elif ciclo.startswith("SEGUNDO"):
-            return "#E0FFFF"  # Turquesa claro
-        elif ciclo.startswith("TERCER"):
-            return "#FAFAD2"  # Amarillo claro
-        elif ciclo.startswith("CUARTO"):
-            return "#FAF0E6"  # Lino
-        elif ciclo.startswith("QUINTO"):
-            return "#FFF5EE"  # Seashell
-        elif ciclo.startswith("SEXTO"):
-            return "#F5F5DC"  # Beige
-        elif ciclo.startswith("SEPTIMO"):
-            return "#E6E6FA"  # Lavanda
-        elif ciclo.startswith("OCTAVO"):
-            return "#FFF0F5"  # Lavanda rojizo
-        elif ciclo.startswith("NOVENO"):
-            return "#F8F8FF"  # Azul fantasma
-        elif ciclo.startswith("DECIMO"):
-            return "#F5DEB3"  # Wheat
+ # Autenticar al usuario
+    if st.button("Iniciar sesión"):
+        if authenticate(username, password):
+            st.success("¡Inicio de sesión exitoso!")
+            st.markdown("""
+            <div style="text-align: center; margin-top: 2rem;">
+                <h2 style="color: #ad1c2d;">¡Bienvenido a tu Portal de Matrícula!</h2>
+                <p style="color: #0d0c0c;">Aquí podrás visualizar tu historial académico y los cursos que has llevado desde el primer ciclo hasta el décimo.</p>
+            </div>
+            """, unsafe_allow_html=True)
+            # Aquí puedes agregar el código para mostrar los cursos y el historial académico
         else:
-            return ""  # Sin color de fondo
+            st.error("Usuario o contraseña incorrectos.")
 
-    # Mostrar los cursos por ciclo
-    for ciclo in data["CICLO"].unique():
-        cursos = data[data["CICLO"] == ciclo]
-        st.subheader(f"{ciclo}")
-        styled_cursos = cursos.style.apply(lambda value: [f"background-color: {get_bg_color(ciclo, value['PRE REQUISITO'])};color: black;"], axis=1, subset=["PRE REQUISITO"])
-        st.write(styled_cursos.to_html(), unsafe_allow_html=True)
-
-    st.write("Nota: Los cursos en color tienen prerrequisitos que deben ser aprobados antes de llevarlos.")
-
-# Iniciar la aplicación
-login()
-
-
-
-
-
-   
