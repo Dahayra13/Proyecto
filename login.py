@@ -58,74 +58,25 @@ if submit:
 
 
 #########################################################################################
-st.balloons()  # Agregar globos de fiesta para hacer la bienvenida más didáctica
-            
-            # Mostrar la página de visualización de cursos
-            st.title("Plan de Estudios de Ingeniería Informática - UPCH")
-            st.write("A continuación, podrás visualizar tu plan de estudios desde el primer hasta el décimo ciclo.")
 
-            # Mostrar los cursos por ciclo
-            for ciclo in data["CICLO"].unique():
-                cursos = data[data["CICLO"] == ciclo]
-                st.subheader(f"{ciclo}")
-                st.write(cursos.style.apply(lambda x: [f"background-color: {get_bg_color(ciclo)}"] * len(x), axis=1).to_html(), unsafe_allow_html=True)
-
-            # Sección de gráfico de prerrequisitos
-            st.subheader("Visualización de Prerrequisitos")
-            st.write("A continuación, se muestra un gráfico que ilustra las relaciones de prerrequisitos entre los cursos.")
-
-            # Generar el gráfico de prerrequisitos
-            G = nx.DiGraph()
-            for _, row in data.iterrows():
-                curso = row["CURSO"]
-                prerequisitos = row["PREREQUISITOS"].split(", ")
-                G.add_node(curso)
-                for p in prerequisitos:
-                    G.add_edge(p, curso)
-
-            # Mostrar el gráfico de prerrequisitos
-            fig, ax = plt.subplots(figsize=(12, 8))
-            pos = nx.spring_layout(G)
-            nx.draw(G, pos, with_labels=True, node_color="#1A4D80", edge_color="#1A4D80", font_color="white", ax=ax)
-            st.pyplot(fig)
-
-            # Nota al pie
-            st.write("Nota: Los cursos en colores tienen prerrequisitos que deben ser aprobados antes de llevarlos.")
-        else:
-            st.error("Invalid username or password. Please try again.")
-else:
-    # Si el usuario ya ha iniciado sesión, redirigir directamente a la página de visualización de cursos
-    st.title("Gestión de Cursos de Ingeniería Informática - UPCH")
-    st.write("A continuación, podrás visualizar tu plan de estudios desde el primer hasta el décimo ciclo.")
-
-    # Mostrar los cursos por ciclo
-    for ciclo in data["CICLO"].unique():
-        cursos = data[data["CICLO"] == ciclo]
-        st.subheader(f"{ciclo}")
-        st.write(cursos.style.apply(lambda x: [f"background-color: {get_bg_color(ciclo)}"] * len(x), axis=1).to_html(), unsafe_allow_html=True)
-
-    # Sección de gráfico de prerrequisitos
-    st.subheader("Visualización de Prerrequisitos")
-    st.write("A continuación, se muestra un gráfico que ilustra las relaciones de prerrequisitos entre los cursos.")
-
-    # Generar el gráfico de prerrequisitos
-    G = nx.DiGraph()
-    for _, row in data.iterrows():
-        curso = row["CURSO"]
-        prerequisitos = row["PREREQUISITOS"].split(", ")
-        G.add_node(curso)
-        for p in prerequisitos:
-            G.add_edge(p, curso)
-
-    # Mostrar el gráfico de prerrequisitos
-    fig, ax = plt.subplots(figsize=(12, 8))
-    pos = nx.spring_layout(G)
-    nx.draw(G, pos, with_labels=True, node_color="#1A4D80", edge_color="#1A4D80", font_color="white", ax=ax)
-    st.pyplot(fig)
-
-    # Nota al pie
-    st.write("Nota: Los cursos en colores
-
+# Mostrar información del alumno
+    st.markdown("<h2 style='text-align: center; color: #fcfcfc;'>¡Bienvenido, Estudiante!</h2>", unsafe_allow_html=True)
+    
+    # Obtener los datos del alumno desde el archivo CSV
+    student_data = data[data['ID'] == int(username)]
+    
+    # Mostrar el plan de estudios del alumno
+    st.markdown("<h3 style='color: #fcfcfc;'>Plan de Estudios</h3>", unsafe_allow_html=True)
+    for ciclo in range(1, 11):
+        materias = student_data[f'Ciclo {ciclo}'].dropna().tolist()
+        if materias:
+            st.markdown(f"<h4 style='color: #fcfcfc;'>Ciclo {ciclo}</h4>", unsafe_allow_html=True)
+            for materia in materias:
+                st.write(f"- {materia}")
+    
+    # Mostrar la plantilla de grafos
+    st.markdown("<h3 style='color: #fcfcfc;'>Plantilla de Grafos</h3>", unsafe_allow_html=True)
+    st.image("https://d41chssnpqdne.cloudfront.net/user_upload_by_module/chat_bot/files/982946/UmvaSdeIctqoSwrX.jpg?Expires=1715458372&Signature=c4eF7nmi7LjjeHJ80Cdd8xFuWCyGeumjSGlpyrXoWdzVss4SCJOhiKyaSGUY6g9hkABV48UPDtESXipdenZSGtaxE~iF5w0Btj1DhcrsNz2G1ui2q67wyt~pBv12Ve6Z8mfQRW0fi3Y3F3BnIdGt8g-eUTSNHmQS6DCluuSKD78uy15fDZ1nIO44CCewwnU2Esbn1CWjh0RCdid8RlN33tsEI21tC4zIxgJMV0wpclYhbImmgQ0NougBm1EaEUSCWcHu9l79ifS5Aa2CWnNJGWWwFIWSLM8D20Cpv8D8eBFXwBVCfEi~WiHlKyzOnlS-J6rc5Q5Gg38dWdFCI9hcAQ__&Key-Pair-Id=K3USGZIKWMDCSX", use_column_width=True)
 
 
 
