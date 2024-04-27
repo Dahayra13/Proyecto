@@ -26,7 +26,7 @@ st.markdown("""
 <div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.7rem; box-shadow: 0 1024px 768x rgba(0, 0, 0, 0.1); max-width: 600px; margin: auto;">
     <div style="text-align: center; margin-bottom: 2rem;">
         <h1 style="color: #ad1c2d;">Bienvenido al Portal de Matrícula UPCH</h1>
-        <p style="color: #1c1b1c;">Inicia sesión para acceder a la aplicación</p>
+        <p style="color: #0d0c0c;">Inicia sesión para acceder al plan de estudios</p>
     </div>
     <form>
         <div class="form-group">
@@ -38,7 +38,7 @@ st.markdown("""
             <input type="password" class="form-control" id="contrasenia" placeholder="Ingrese su contraseña" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" required>
         </div>
         <div class="form-group" style="text-align: center;">
-            <button type="button" class="btn btn-primary" onclick="handleLogin()" style="padding: 0.5rem 2rem; background-color: #ad1c2d; color: grey; border: none; border-radius: 0.3rem;">Iniciar Sesión</button>
+            <button type="button" class="btn btn-primary" onclick="handleLogin()" style="padding: 0.5rem 2rem; background-color: #f59042; color: grey; border: none; border-radius: 0.3rem;">Iniciar Sesión</button>
         </div>
     </form>
 </div>
