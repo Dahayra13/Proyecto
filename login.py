@@ -33,8 +33,8 @@ st.markdown(
     .portal-title {
         text-align: center;
         color: #1A4D80;
-        margin-bottom: 60px;
-        font-size: 50px;
+        margin-bottom: 10px;
+        font-size: 5px;
     }
     </style>
     """,
