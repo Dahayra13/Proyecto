@@ -69,34 +69,21 @@ def main():
         .cycle-4 {
             background-color: #c0c0c0;
         }
+        .cycle-5 {
+            background-color: #b0b0b0;
+        }
         </style>
         """, unsafe_allow_html=True)
 
         # Muestra la sección seleccionada
         for app_page in app.apps:
             if app_page['title'] == selected_app:
-                if app_page['title'] == 'Modelar Cursos':
-                    with st.container():
-                        st.markdown(f"<div class='cycle-1'>", unsafe_allow_html=True)
-                        app_page['function']()
-                        st.markdown("</div>", unsafe_allow_html=True)
-                    with st.container():
-                        st.markdown(f"<div class='cycle-2'>", unsafe_allow_html=True)
-                        app_page['function']()
-                        st.markdown("</div>", unsafe_allow_html=True)
-                    with st.container():
-                        st.markdown(f"<div class='cycle-3'>", unsafe_allow_html=True)
-                        app_page['function']()
-                        st.markdown("</div>", unsafe_allow_html=True)
-                    with st.container():
-                        st.markdown(f"<div class='cycle-4'>", unsafe_allow_html=True)
-                        app_page['function']()
-                        st.markdown("</div>", unsafe_allow_html=True)
-                else:
-                    app_page['function']()
+                app_page['function']()
                 break
 
 if __name__ == "__main__":
     main()
+
+
 
 
