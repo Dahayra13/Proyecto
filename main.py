@@ -11,11 +11,6 @@ from optimizar_horarios import app as optimizar_horarios_app
 import os
 import base64
 import matplotlib.pyplot as plt
-import numpy as np
-
-def set_pastel_colors(ax):
-    colors = ['#FFC0CB', '#ADD8E6', '#90EE90', '#FFD700', '#800080', '#00FFFF']
-    ax.set_prop_cycle(color=colors)
 
 def main():
     # Configuración de la página
@@ -58,18 +53,9 @@ def main():
                 app_info['function']()
                 break
 
-    # Cambiar el tipo de letra
+    # Cambiar el tipo de letra a Times New Roman
     plt.rcParams["font.family"] = "Times New Roman"
     plt.rcParams["font.size"] = 14
-
-    # Modificar los gráficos por cada ciclo con colores pastel
-    fig, ax = plt.subplots(figsize=(8, 6))
-    set_pastel_colors(ax)
-    labels = ['Ciclo 1', 'Ciclo 2', 'Ciclo 3', 'Ciclo 4', 'Ciclo 5', 'Ciclo 6']
-    values = [12, 18, 9, 15, 11, 13]
-    ax.pie(values, labels=labels, autopct='%1.1f%%')
-    ax.set_title('Distribución de Cursos por Ciclo', fontdict={'fontsize': 16, 'fontweight': 'bold'})
-    st.pyplot(fig)
 
 if __name__ == "__main__":
     main()
