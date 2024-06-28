@@ -58,19 +58,19 @@ def main():
             color: #333;
         }
         .cycle-1 {
-            background-color: #f0f0f0;
+            background-color: #f0f8ff; /* Azul pastel */
         }
         .cycle-2 {
-            background-color: #e0e0e0;
+            background-color: #f5f5dc; /* Beige pastel */
         }
         .cycle-3 {
-            background-color: #d0d0d0;
+            background-color: #e6e6fa; /* Lavanda pastel */
         }
         .cycle-4 {
-            background-color: #c0c0c0;
+            background-color: #faf0e6; /* Salmón pastel */
         }
         .cycle-5 {
-            background-color: #b0b0b0;
+            background-color: #f0ffff; /* Celeste pastel */
         }
         </style>
         """, unsafe_allow_html=True)
@@ -83,7 +83,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
 
 
