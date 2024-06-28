@@ -10,35 +10,30 @@ from asignacion_alumnos import app as asignacion_alumnos_app
 from optimizar_horarios import app as optimizar_horarios_app
 import os
 import base64
-import matplotlib.pyplot as plt
 
 def main():
-    # Configuración de la página
     st.set_page_config(layout="wide", initial_sidebar_state='collapsed', page_title="Gestión de Cursos UPCH")
 
-    # Cargar el logotipo
-    current_dir = os.path.dirname(os.path.abspath(__file__))
+    current_dir = os.path.dirname(os.path.abspath(_file_))
     logo_path = os.path.join(current_dir, "logo_upch.png")
+
     with open(logo_path, "rb") as image_file:
         encoded_logo = base64.b64encode(image_file.read()).decode()
 
-    # Credenciales de inicio de sesión
-    User = "0000"
-    Password = "0000"
+    User = "0000"  # Tu usuario
+    Password = "0000"  # Tu contraseña
 
-    # Verificar si el usuario ha iniciado sesión
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
 
     set_background()
 
-    # Mostrar la pantalla de inicio de sesión si el usuario no ha iniciado sesión
     if not st.session_state.logged_in:
         login(encoded_logo, User, Password)
     else:
-        # Crear la aplicación multiapp
         app = MultiApp()
-        app.add_app("Inicio", home_app)
+
+        app.add_app("Home", home_app)
         app.add_app("Modelar Salones", modelar_salones_app)
         app.add_app("Modelar Ambientes", modelar_ambientes_app)
         app.add_app("Modelar Cursos", modelar_cursos_app)
@@ -46,16 +41,12 @@ def main():
         app.add_app("Asignación de Alumnos", asignacion_alumnos_app)
         app.add_app("Optimización de Horarios", optimizar_horarios_app)
 
-        # Ejecutar la aplicación multiapp
-        selected_app = st.sidebar.selectbox("Selecciona una sección", [app_info['title'] for app_info in app.apps])
-        for app_info in app.apps:
-            if app_info['title'] == selected_app:
-                app_info['function']()
+        selected_app = st.sidebar.selectbox("Selecciona una sección", [app['title'] for app in app.apps])
+
+        for app_page in app.apps:
+            if app_page['title'] == selected_app:
+                app_page['function']()
                 break
 
-    # Cambiar el tipo de letra a Times New Roman
-    plt.rcParams["font.family"] = "Times New Roman"
-    plt.rcParams["font.size"] = 14
-
-if __name__ == "__main__":
+if _name_ == "_main_":
     main()
