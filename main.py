@@ -8,8 +8,6 @@ from modelar_cursos import app as modelar_cursos_app
 from requerimiento_ambientes import app as requerimiento_ambientes_app
 from asignacion_alumnos import app as asignacion_alumnos_app
 from optimizar_horarios import app as optimizar_horarios_app
-import os
-import base64
 
 def main():
     st.set_page_config(layout="wide", initial_sidebar_state='collapsed', page_title="Gestión de Cursos UPCH")
@@ -23,8 +21,9 @@ def main():
     set_background()
 
     if not st.session_state.logged_in:
-        login(User, Password)
-    else:
+        st.session_state.logged_in = login(User, Password)
+    
+    if st.session_state.logged_in:
         app = MultiApp()
 
         app.add_app("Home", home_app)
@@ -44,4 +43,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
