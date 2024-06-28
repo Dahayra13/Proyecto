@@ -9,17 +9,10 @@ from requerimiento_ambientes import app as requerimiento_ambientes_app
 from asignacion_alumnos import app as asignacion_alumnos_app
 from optimizar_horarios import app as optimizar_horarios_app
 import os
-import base64
 
 def main():
     # Configurar la página de Streamlit
     st.set_page_config(layout="wide", initial_sidebar_state='collapsed', page_title="Gestión de Cursos UPCH")
-
-    # Cargar y codificar el logo de la UPCH
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    logo_path = os.path.join(current_dir, "logo_upch.png")
-    with open(logo_path, "rb") as image_file:
-        encoded_logo = base64.b64encode(image_file.read()).decode()
 
     # Definir las credenciales de usuario y contraseña
     User = "0000"  # Tu usuario
@@ -35,7 +28,7 @@ def main():
     # Verificar si el usuario ha iniciado sesión
     if not st.session_state.logged_in:
         # Si no ha iniciado sesión, llamar a la función de inicio de sesión
-        login(encoded_logo, User, Password)
+        login(User, Password)
     else:
         # Si ya ha iniciado sesión, mostrar la aplicación
         app = MultiApp()
@@ -60,5 +53,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
