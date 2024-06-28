@@ -16,6 +16,15 @@ def save_data(ambientes):
     ambientes.to_csv('ambientes.csv', index=False)
 
 def app():
+    st.set_page_config(layout="wide")
+    st.markdown("""
+        <style>
+        body, input, textarea, select, button, p, h1, h2, h3, h4, h5, h6 {
+            font-family: 'Times New Roman', serif;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
     st.title("Modelar Tipos de Ambientes - UPCH")
 
     ambientes = load_data()
@@ -35,7 +44,7 @@ def app():
             save_data(ambientes)
             st.success(f"Tipo de Ambiente {tipo} añadido exitosamente")
             st.experimental_rerun()
-#deleteooo xd 
+
     with st.form(key='delete_ambiente'):
         st.write("### Eliminar Tipo de Ambiente")
         ambiente_a_eliminar = st.selectbox("Selecciona el Tipo de Ambiente a eliminar", ambientes['Tipo de Ambiente'])
