@@ -14,7 +14,7 @@ import base64
 def main():
     st.set_page_config(layout="wide", initial_sidebar_state='collapsed', page_title="Gestión de Cursos UPCH")
 
-    current_dir = os.path.dirname(os.path.abspath(_file_))
+    current_dir = os.path.dirname(os.path.abspath(__file__))
     logo_path = os.path.join(current_dir, "logo_upch.png")
 
     with open(logo_path, "rb") as image_file:
@@ -48,5 +48,5 @@ def main():
                 app_page['function']()
                 break
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
