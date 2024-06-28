@@ -17,6 +17,9 @@ def main():
     current_dir = os.path.dirname(os.path.abspath(_file_))
     logo_path = os.path.join(current_dir, "logo_upch.png")
 
+    with open(logo_path, "rb") as image_file:
+        encoded_logo = base64.b64encode(image_file.read()).decode()
+
     User = "0000"  # Tu usuario
     Password = "0000"  # Tu contraseña
 
