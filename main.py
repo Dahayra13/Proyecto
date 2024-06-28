@@ -22,7 +22,7 @@ def main():
 
     if not st.session_state.logged_in:
         st.session_state.logged_in = login(User, Password)
-    
+
     if st.session_state.logged_in:
         app = MultiApp()
 
@@ -43,5 +43,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
