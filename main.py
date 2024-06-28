@@ -9,9 +9,16 @@ from requerimiento_ambientes import app as requerimiento_ambientes_app
 from asignacion_alumnos import app as asignacion_alumnos_app
 from optimizar_horarios import app as optimizar_horarios_app
 import os
+import base64
 
 def main():
     st.set_page_config(layout="wide", initial_sidebar_state='collapsed', page_title="Gestión de Cursos UPCH")
+
+    current_dir = os.path.dirname(os.path.abspath(_file_))
+    logo_path = os.path.join(current_dir, "logo_upch.png")
+
+    with open(logo_path, "rb") as image_file:
+        encoded_logo = base64.b64encode(image_file.read()).decode()
 
     User = "0000"  # Tu usuario
     Password = "0000"  # Tu contraseña
@@ -22,7 +29,7 @@ def main():
     set_background()
 
     if not st.session_state.logged_in:
-        login(User, Password)
+        login(encoded_logo, User, Password)
     else:
         app = MultiApp()
 
@@ -41,6 +48,5 @@ def main():
                 app_page['function']()
                 break
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     main()
-
