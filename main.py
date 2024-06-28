@@ -50,12 +50,53 @@ def main():
         # Permite al usuario seleccionar la sección que desea ver
         selected_app = st.sidebar.selectbox("Selecciona una sección", [app['title'] for app in app.apps])
 
+        # Establece el estilo de la fuente y el color de fondo
+        st.markdown("""
+        <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            color: #333;
+        }
+        .cycle-1 {
+            background-color: #f0f0f0;
+        }
+        .cycle-2 {
+            background-color: #e0e0e0;
+        }
+        .cycle-3 {
+            background-color: #d0d0d0;
+        }
+        .cycle-4 {
+            background-color: #c0c0c0;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+
         # Muestra la sección seleccionada
         for app_page in app.apps:
             if app_page['title'] == selected_app:
-                app_page['function']()
+                if app_page['title'] == 'Modelar Cursos':
+                    with st.container():
+                        st.markdown(f"<div class='cycle-1'>", unsafe_allow_html=True)
+                        app_page['function']()
+                        st.markdown("</div>", unsafe_allow_html=True)
+                    with st.container():
+                        st.markdown(f"<div class='cycle-2'>", unsafe_allow_html=True)
+                        app_page['function']()
+                        st.markdown("</div>", unsafe_allow_html=True)
+                    with st.container():
+                        st.markdown(f"<div class='cycle-3'>", unsafe_allow_html=True)
+                        app_page['function']()
+                        st.markdown("</div>", unsafe_allow_html=True)
+                    with st.container():
+                        st.markdown(f"<div class='cycle-4'>", unsafe_allow_html=True)
+                        app_page['function']()
+                        st.markdown("</div>", unsafe_allow_html=True)
+                else:
+                    app_page['function']()
                 break
 
 if __name__ == "__main__":
     main()
+
 
