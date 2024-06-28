@@ -10,22 +10,36 @@ from asignacion_alumnos import app as asignacion_alumnos_app
 from optimizar_horarios import app as optimizar_horarios_app
 import os
 import base64
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Lista de colores pastel
+colores_pastel = ['#FFD1DC', '#B19CD9', '#FFCBA4', '#B2EC5D', '#A2DFFF']
 
 def main():
-    # Establece la configuración de la página
     st.set_page_config(layout="wide", initial_sidebar_state='collapsed', page_title="Gestión de Cursos UPCH")
 
-    # Carga el logotipo de la UPCH
+    # CSS para cambiar el tipo de letra a Times New Roman
+    st.markdown(
+        """
+        <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
     current_dir = os.path.dirname(os.path.abspath(__file__))
     logo_path = os.path.join(current_dir, "logo_upch.png")
+
     with open(logo_path, "rb") as image_file:
         encoded_logo = base64.b64encode(image_file.read()).decode()
 
-    # Credenciales de inicio de sesión
-    User = "0000"
-    Password = "0000"
+    User = "0000"  # Tu usuario
+    Password = "0000"  # Tu contraseña
 
-    # Verifica si el usuario ha iniciado sesión
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
 
@@ -44,50 +58,28 @@ def main():
         app.add_app("Asignación de Alumnos", asignacion_alumnos_app)
         app.add_app("Optimización de Horarios", optimizar_horarios_app)
 
-        # Agrega el estilo de la fuente y el color de fondo por ciclo
-        st.markdown("""
-        <style>
-        body, .stApp, .stMarkdown, .stContainer, .stVerticalBlock, .stHorizontalBlock, .stButton, .stRadio, .stCheckbox, .stSelectbox, .stExpander, .stSlider, .stTextInput, .stTextArea, .stNumber, .stDateInput, .stTime, .stFile, .stCode, .stTable, .stDataFrame, .stPlot, .stMap, .stProgressBar, .stStatusBox, .stSpinner, .stVega, .stLottie {
-            font-family: 'Times New Roman', serif;
-        }
-        .cycle1 {
-            background-color: #e6f2ff; /* Azul pastel */
-        }
-        .cycle2 {
-            background-color: #e6ffe6; /* Verde pastel */
-        }
-        .cycle3 {
-            background-color: #fff0f0; /* Rojo pastel */
-        }
-        .cycle4 {
-            background-color: #fff2e6; /* Naranja pastel */
-        }
-        </style>
-
-        # Muestra la sección seleccionada
         selected_app = st.sidebar.selectbox("Selecciona una sección", [app['title'] for app in app.apps])
+
         for app_page in app.apps:
             if app_page['title'] == selected_app:
-                if app_page['title'] == "Modelar Cursos":
-                    with st.container():
-                        st.markdown('<div class="cycle1">', unsafe_allow_html=True)
-                        # Contenido del ciclo 1
-                        st.markdown('</div>', unsafe_allow_html=True)
-                    with st.container():
-                        st.markdown('<div class="cycle2">', unsafe_allow_html=True)
-                        # Contenido del ciclo 2
-                        st.markdown('</div>', unsafe_allow_html=True)
-                    with st.container():
-                        st.markdown('<div class="cycle3">', unsafe_allow_html=True)
-                        # Contenido del ciclo 3
-                        st.markdown('</div>', unsafe_allow_html=True)
-                    with st.container():
-                        st.markdown('<div class="cycle4">', unsafe_allow_html=True)
-                        # Contenido del ciclo 4
-                        st.markdown('</div>', unsafe_allow_html=True)
-                else:
-                    app_page['function']()
+                app_page['function']()
                 break
+
+        # Ejemplo de gráfico de barras con colores pastel
+        def grafico_ejemplo():
+            datos = np.random.randint(1, 10, size=5)
+            etiquetas = ['A', 'B', 'C', 'D', 'E']
+            
+            fig, ax = plt.subplots()
+            ax.bar(etiquetas, datos, color=colores_pastel)
+            ax.set_xlabel('Etiquetas')
+            ax.set_ylabel('Datos')
+            ax.set_title('Gráfico con colores pastel')
+            
+            st.pyplot(fig)
+
+        # Llamamos a la función del gráfico de ejemplo
+        grafico_ejemplo()
 
 if __name__ == "__main__":
     main()
