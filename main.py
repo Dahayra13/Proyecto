@@ -59,7 +59,7 @@ def main():
                 break
 
     # Cambiar el tipo de letra
-    plt.rcParams["font.family"] = "Roboto"
+    plt.rcParams["font.family"] = "Times New Roman"
     plt.rcParams["font.size"] = 14
 
     # Modificar los gráficos por cada ciclo con colores pastel
