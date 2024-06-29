@@ -2,9 +2,6 @@ import streamlit as st
 import pandas as pd
 import os
 
-# Establecer la fuente de letra a Times New Roman
-st.set_option('theme.font', 'Times New Roman')
-
 def load_data():
     if os.path.exists('ambientes.csv'):
         return pd.read_csv('ambientes.csv')
